@@ -29,5 +29,9 @@ namespace Pubs.Core.Entities
         public DateTime PublishedDate { get; set; }
 
         public ICollection<Royalty> Royalties { get; set; }
+
+        public ICollection<Sale> Sales { get; set; }
+
+        public Publisher Publisher { get; set; }
     }
 }

@@ -20,5 +20,10 @@ namespace Pubs.Core.Entities
         public ICollection<Book> Books { get; set; }
 
         public ICollection<PublisherLogo> PublisherLogos { get; set; }
+
+        public ICollection<Title> Titles { get; set; }
+
+        public ICollection<Employee> Employees { get; set; }
+
     }
 }
