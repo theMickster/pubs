@@ -19,5 +19,6 @@ namespace Pubs.Core.Entities
         
         public ICollection<Discount> Discounts { get; set; }
 
+        public ICollection<Sale> Sales { get; set; }
     }
 }

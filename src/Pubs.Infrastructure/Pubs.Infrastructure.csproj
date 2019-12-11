@@ -1,16 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Pubs.Core\Pubs.Core.csproj" />
     <ProjectReference Include="..\Pubs.SharedKernel\Pubs.SharedKernel.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="EntityConfigurations\" />
   </ItemGroup>
 
   <ItemGroup>
