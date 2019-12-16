@@ -19,7 +19,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Pubs.CoreDomain\Pubs.CoreDomain.csproj" />
-    <ProjectReference Include="..\Pubs.SharedKernel\Pubs.SharedKernel.csproj" />
   </ItemGroup>
 
 </Project>
