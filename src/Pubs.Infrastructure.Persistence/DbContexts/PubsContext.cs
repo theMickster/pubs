@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Pubs.Application.Common.Interfaces;
 using Pubs.CoreDomain.Entities;
+using Pubs.CoreDomain.Entities.Security;
 using Pubs.Infrastructure.Persistence.EntityConfigurations;
 
 namespace Pubs.Infrastructure.Persistence.DbContexts
@@ -37,7 +38,14 @@ namespace Pubs.Infrastructure.Persistence.DbContexts
 
         public DbSet<Title> Titles { get; set; }
 
-        
+        public DbSet<ApplicationRole> ApplicationRoles { get; set; }
+
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+
+        public DbSet<ApplicationUserStatus> ApplicationUserStatuses { get; set; }
+
+        public DbSet<ApplicationUserRole> ApplicationUserRoles { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new AuthorConfiguration(DefaultSchema));
@@ -51,6 +59,11 @@ namespace Pubs.Infrastructure.Persistence.DbContexts
             modelBuilder.ApplyConfiguration(new SaleConfiguration(DefaultSchema));
             modelBuilder.ApplyConfiguration(new StoreConfiguration(DefaultSchema));
             modelBuilder.ApplyConfiguration(new TitleConfiguration(DefaultSchema));
+
+            modelBuilder.ApplyConfiguration(new ApplicationRoleConfiguration(DefaultSchema));
+            modelBuilder.ApplyConfiguration(new ApplicationUserConfiguration(DefaultSchema));
+            modelBuilder.ApplyConfiguration(new ApplicationUserRoleConfiguration(DefaultSchema));
+            modelBuilder.ApplyConfiguration(new ApplicationUserStatusConfiguration(DefaultSchema));
         }
     }
 }

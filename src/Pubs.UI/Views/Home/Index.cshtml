@@ -1,0 +1,17 @@
+﻿@inject Microsoft.AspNetCore.Hosting.IWebHostEnvironment WebHostEnvironment
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="text-center">
+    <h1>Pubs</h1>
+    <environment exclude="Production,Development">
+        <h2><span class="badge badge-warning">@WebHostEnvironment.EnvironmentName Server</span></h2>
+    </environment>
+    <environment include="Development">
+        <h2><span class="badge badge-danger">@WebHostEnvironment.EnvironmentName Server</span></h2>
+    </environment>
+</div>
+
