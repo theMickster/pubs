@@ -168,6 +168,7 @@
     <Folder Include="Programmable Objects\dbo" />
     <Folder Include="Programmable Objects\dbo\Triggers" />
     <Folder Include="Programmable Objects\dbo\Views" />
+    <Folder Include="Migrations\1.1.0" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Pre-Deployment\01_Create_Database.sql" />
@@ -249,5 +250,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Migrations\1.0.0\00023_20190207_1952_CREATE_CONSTRAINTS.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Migrations\1.1.0\00024_20210326_0722_CREATE_application_user.sql" />
   </ItemGroup>
 </Project>

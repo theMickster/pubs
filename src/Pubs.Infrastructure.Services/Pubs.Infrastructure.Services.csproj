@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Pubs.Application\Pubs.Application.csproj" />
+    <ProjectReference Include="..\Pubs.SharedKernel\Pubs.SharedKernel.csproj" />
+  </ItemGroup>
+
+</Project>
