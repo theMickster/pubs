@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Pubs.Application.Common.Interfaces;
+using Pubs.Application.Interfaces.Repositories;
 using Pubs.CoreDomain.Entities;
 using Pubs.Infrastructure.Persistence.DbContexts;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Pubs.Infrastructure.Persistence.Repositories
 {
-    public class EmployeeRepository : EntityFrameworkRepository<Employee>, IEmployeeRepository
+    public class EmployeeRepository : EntityFrameworkRepository<Employee, int>, IEmployeeRepository
     {
         public EmployeeRepository(PubsContext dbContext) : base(dbContext)
         {

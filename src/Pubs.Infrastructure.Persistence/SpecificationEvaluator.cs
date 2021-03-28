@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Pubs.Application.Common.Interfaces;
 using Pubs.SharedKernel.Entities;
 
-namespace Pubs.Infrastructure
+namespace Pubs.Infrastructure.Persistence
 {
     public class SpecificationEvaluator<T> where T : BaseEntity
     {

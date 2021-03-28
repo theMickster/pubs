@@ -1,5 +1,7 @@
 ﻿using Autofac;
 using Pubs.Application.Common.Interfaces;
+using Pubs.Application.Interfaces.DbContexts;
+using Pubs.Application.Interfaces.Repositories;
 using Pubs.Infrastructure.Persistence.DbContexts;
 using Pubs.Infrastructure.Persistence.Repositories;
 

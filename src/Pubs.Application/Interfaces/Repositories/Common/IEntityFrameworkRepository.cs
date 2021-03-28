@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Pubs.SharedKernel.Entities;
 
-namespace Pubs.Application.Common.Interfaces
+namespace Pubs.Application.Interfaces.Repositories.Common
 {
     public interface IEntityFrameworkRepository<T> where T : BaseEntity
     {

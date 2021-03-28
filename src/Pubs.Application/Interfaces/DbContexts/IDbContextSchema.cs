@@ -1,4 +1,4 @@
-﻿namespace Pubs.Application.Common.Interfaces
+﻿namespace Pubs.Application.Interfaces.DbContexts
 {
     public interface IDbContextSchema
     {

@@ -1,4 +1,4 @@
-﻿using Pubs.Application.Common.Interfaces;
+﻿using Pubs.Application.Interfaces.DbContexts;
 using System;
 
 namespace Pubs.Application.Common.Helpers

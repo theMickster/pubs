@@ -1,9 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using Microsoft.EntityFrameworkCore;
 using Pubs.CoreDomain.Entities;
+using Pubs.CoreDomain.Entities.Security;
 
-namespace Pubs.Application.Common.Interfaces
+namespace Pubs.Application.Interfaces.DbContexts
 {
-    public interface IPubsContext 
+    public interface IPubsContext : IDisposable
     {
         DbSet<Author> Authors { get; set; }
 
@@ -26,6 +28,14 @@ namespace Pubs.Application.Common.Interfaces
         DbSet<Store> Stores { get; set; }
 
         DbSet<Title> Titles { get; set; }
+
+        DbSet<ApplicationRole> ApplicationRoles { get; set; }
+
+        DbSet<ApplicationUser> ApplicationUsers { get; set; }
+
+        DbSet<ApplicationUserStatus> ApplicationUserStatuses { get; set; }
+
+        DbSet<ApplicationUserRole> ApplicationUserRoles { get; set; }
 
     }
 }

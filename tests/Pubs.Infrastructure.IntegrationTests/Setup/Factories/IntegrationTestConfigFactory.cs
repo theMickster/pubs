@@ -8,6 +8,7 @@ namespace Pubs.Infrastructure.IntegrationTests.Setup.Factories
         {
             return new ConfigurationBuilder()
                 .AddJsonFile("IntegrationTestSettings.json")
+                .AddUserSecrets<IntegrationTestBase>()
                 .AddEnvironmentVariables()
                 .Build();
         }
