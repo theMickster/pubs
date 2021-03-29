@@ -7,8 +7,6 @@
         public const string Login = nameof(Login);
         public const string Logout = nameof(Logout);
         public const string LoginFailure = nameof(LoginFailure);
-        public const string KeepAlive = nameof(KeepAlive);
         public const string Error = nameof(Error);
-        public const string ErrorStatusCode = nameof(ErrorStatusCode);
     }
 }

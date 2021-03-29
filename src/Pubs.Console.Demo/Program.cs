@@ -1,13 +1,12 @@
 ﻿namespace Pubs.Console.Demo
 {
-    using System;
     using Autofac;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Pubs.Application.Common.Helpers;
-    using Pubs.Application.Common.Interfaces;
     using Pubs.Infrastructure.Persistence.DbContexts;
+    using System;
 
     internal class Program
     {
