@@ -11,7 +11,7 @@ namespace Pubs.UnitTests.Domain.Entities
         [Fact]
         public void property_update_succeeds()
         {
-            var sut = new ApplicationUserStatus()
+            var sut = new ApplicationUserStatus
             {
                 Id = 7,
                 StatusAbbreviation = "A",
