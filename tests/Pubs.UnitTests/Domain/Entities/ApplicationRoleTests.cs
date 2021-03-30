@@ -1,9 +1,9 @@
-﻿using FluentAssertions;
+﻿using System.Collections.Generic;
+using System.Linq;
+using FluentAssertions;
 using FluentAssertions.Execution;
 using Pubs.CoreDomain.Entities.Security;
 using Pubs.UnitTests.Setup;
-using System.Collections.Generic;
-using System.Linq;
 using Xunit;
 
 namespace Pubs.UnitTests.Domain.Entities

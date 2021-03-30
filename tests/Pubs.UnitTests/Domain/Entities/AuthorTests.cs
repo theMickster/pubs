@@ -11,7 +11,7 @@ namespace Pubs.UnitTests.Domain.Entities
         [Fact]
         public void property_update_succeeds()
         {
-            var sut = new Author()
+            var sut = new Author
             {
                 Id = 25,
                 FirstName = "Unit",
