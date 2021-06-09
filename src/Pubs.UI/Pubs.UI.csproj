@@ -12,13 +12,33 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\" />
-    <Folder Include="wwwroot\img\" />
+    <Compile Remove="Areas\**" />
+    <Compile Remove="wwwroot\img\**" />
+    <Content Remove="Areas\**" />
+    <Content Remove="wwwroot\img\**" />
+    <EmbeddedResource Remove="Areas\**" />
+    <EmbeddedResource Remove="wwwroot\img\**" />
+    <None Remove="Areas\**" />
+    <None Remove="wwwroot\img\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\lib\bootstrap\dist\" />
+    <Folder Include="wwwroot\lib\bootbox.js\dist\" />
+    <Folder Include="wwwroot\lib\font-awesome\dist\css\" />
+    <Folder Include="wwwroot\lib\font-awesome\dist\js\" />
+    <Folder Include="wwwroot\lib\font-awesome\dist\sprites\" />
+    <Folder Include="wwwroot\lib\font-awesome\dist\webfonts\" />
+    <Folder Include="wwwroot\lib\jquery-validation-unobtrusive\dist\" />
+    <Folder Include="wwwroot\lib\jquery-validation\dist\localization\" />
+    <Folder Include="wwwroot\lib\jquery\dist\" />
+    <Folder Include="wwwroot\lib\popper.js\dist\umd\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.4" />
     <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="2.1.113" />
   </ItemGroup>
 
   <ItemGroup>
