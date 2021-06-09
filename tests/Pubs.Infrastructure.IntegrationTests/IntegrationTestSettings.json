@@ -1,6 +1,0 @@
-﻿{
-  "ConnectionStrings": {
-    "DefaultConnection": "Server=OBIWANKENOBI; Database=Pubs; Trusted_Connection=True; MultipleActiveResultSets=true;"
-  },
-  "DefaultSchema":  "dbo"
-}

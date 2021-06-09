@@ -7,9 +7,9 @@ namespace Pubs.CoreDomain.Entities
     {
         public string JobDescription { get; set; }
 
-        public int MinimumLevel { get; set; }
+        public byte MinimumLevel { get; set; }
 
-        public int MaximumLevel { get; set; }
+        public byte MaximumLevel { get; set; }
         
         public ICollection<Employee> Employees { get; set; }
     }

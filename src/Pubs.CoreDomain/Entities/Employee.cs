@@ -15,7 +15,7 @@ namespace Pubs.CoreDomain.Entities
 
         public int JobId { get; set; }
 
-        public int JobLevel { get; set; }
+        public byte JobLevel { get; set; }
 
         public int PublisherId { get; set; }
 

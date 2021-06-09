@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{5B9F3EA0
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pubs.SharedKernel.Tests", "tests\Pubs.SharedKernel.Tests\Pubs.SharedKernel.Tests.csproj", "{15EB7A2C-4737-45A0-9148-BD669AC88594}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pubs.Infrastructure.IntegrationTests", "tests\Pubs.Infrastructure.IntegrationTests\Pubs.Infrastructure.IntegrationTests.csproj", "{28ED82D8-F90B-45A8-81E0-04CAFEDC3027}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pubs.IntegrationTests", "tests\Pubs.IntegrationTests\Pubs.IntegrationTests.csproj", "{28ED82D8-F90B-45A8-81E0-04CAFEDC3027}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Console", "Console", "{6446D823-4AA3-4548-988D-051476C9E633}"
 EndProject
@@ -29,11 +29,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pubs.Infrastructure.Service
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pubs.Infrastructure.Persistence", "src\Pubs.Infrastructure.Persistence\Pubs.Infrastructure.Persistence.csproj", "{83F4148D-051E-4533-8959-D73CCEA6A1B6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pubs.Application.UnitTests", "tests\Pubs.Application.UnitTests\Pubs.Application.UnitTests.csproj", "{C5581209-3334-4B2B-9A88-1C53FE99D4AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pubs.UnitTests", "tests\Pubs.UnitTests\Pubs.UnitTests.csproj", "{C5581209-3334-4B2B-9A88-1C53FE99D4AC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{D7D641C5-76BE-4E03-82F7-3B8C7F3480BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pubs.UI", "src\Pubs.UI\Pubs.UI.csproj", "{2183B4A8-3AE4-4F66-9767-D2E2E9BEEB77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pubs.UI", "src\Pubs.UI\Pubs.UI.csproj", "{2183B4A8-3AE4-4F66-9767-D2E2E9BEEB77}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

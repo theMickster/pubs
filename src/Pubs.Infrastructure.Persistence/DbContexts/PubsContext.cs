@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Pubs.Application.Common.Interfaces;
+using Pubs.Application.Interfaces.DbContexts;
 using Pubs.CoreDomain.Entities;
 using Pubs.CoreDomain.Entities.Security;
 using Pubs.Infrastructure.Persistence.EntityConfigurations;
