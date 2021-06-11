@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\Migrations\1.0.0\00001_20190206_1344_CREATE_authors.sql" />
+    <EmbeddedResource Include="Scripts\Migrations\1.0.0\00002_20190206_1348_CREATE_publishers.sql" />
+    <EmbeddedResource Include="Scripts\Migrations\1.0.0\00003_20190206_1354_CREATE_stores.sql" />
+    <EmbeddedResource Include="Scripts\Migrations\1.0.0\00004_20190206_1356_CREATE_titles.sql" />
+    <EmbeddedResource Include="Scripts\Migrations\1.0.0\00005_20190206_1405_CREATE_sales.sql" />
+    <EmbeddedResource Include="Scripts\Migrations\1.0.0\00006_20190206_1417_CREATE_royalty.sql" />
+    <EmbeddedResource Include="Scripts\Migrations\1.0.0\00007_20190206_1422_CREATE_title_xref_author.sql" />
+    <EmbeddedResource Include="Scripts\Migrations\1.0.0\00008_20190207_0701_CREATE_discounts.sql" />
+    <EmbeddedResource Include="Scripts\Migrations\1.0.0\00009_20190207_0703_CREATE_jobs.sql" />
+    <EmbeddedResource Include="Scripts\Migrations\1.0.0\00010_20190207_0708_CREATE_publisher_info.sql" />
+    <EmbeddedResource Include="Scripts\Migrations\1.0.0\00011_20190207_0711_CREATE_employee.sql" />
+
+    <EmbeddedResource Include="Scripts\Programmability\Triggers\dbo\employee_insupd.sql" />
+    <EmbeddedResource Include="Scripts\Programmability\Views\dbo\vw_titles.sql" />
+
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="dbup-core" Version="4.5.0" />
+    <PackageReference Include="dbup-sqlserver" Version="4.5.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Scripts\Programmability\Functions\" />
+    <Folder Include="Scripts\Programmability\Views\" />
+    <Folder Include="Scripts\Programmability\Stored Procedures\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Scripts\**" CopyToPublishDirectory="Always"/>
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="XCOPY &quot;$(ProjectDir)Scripts&quot; &quot;$(TargetDir)Scripts\&quot; /S /Y" />
+  </Target>
+
+</Project>
