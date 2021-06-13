@@ -8,9 +8,30 @@
   },
 
   {
+    "outputFileName": "wwwroot/css/navBar.min.css",
+    "inputFiles": [
+      "wwwroot/css/navBar.css"
+    ],
+    "includeInProject": true
+  },
+
+  {
     "outputFileName": "wwwroot/js/site.min.js",
     "inputFiles": [
       "wwwroot/js/site.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "includeInProject": true,
+    "sourceMap": false
+  },
+
+  {
+    "outputFileName": "wwwroot/js/NavBar.min.js",
+    "inputFiles": [
+      "wwwroot/js/NavBar.js"
     ],
     "minify": {
       "enabled": true,

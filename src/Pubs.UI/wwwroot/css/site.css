@@ -1,4 +1,8 @@
-﻿
+﻿body {
+    background-color: #444444;
+    color: #ffffff;
+}
+
 
 .footer {
     position: absolute;
@@ -8,6 +12,11 @@
     line-height: 60px; 
 }
 
+
 .footer-version {
     margin-right: auto !important;
+}
+
+.color-white {
+    color: #fff;
 }

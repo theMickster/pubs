@@ -23,6 +23,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\css\navBar.min.css" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="wwwroot\lib\bootstrap\dist\" />
     <Folder Include="wwwroot\lib\bootbox.js\dist\" />
     <Folder Include="wwwroot\lib\font-awesome\dist\css\" />
