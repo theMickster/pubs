@@ -23,7 +23,7 @@ namespace Pubs.UnitTests.Persistence.Repositories
         /// Unit test to cover synchronous Create, Read, Update, and Delete operations. 
         /// </summary>
         [Fact]
-        public void role_crud_process_succeeds()
+        public void crud_process_succeeds()
         {
             var applicationRole = new ApplicationRole
             {
@@ -56,7 +56,7 @@ namespace Pubs.UnitTests.Persistence.Repositories
         /// Unit test to cover asynchronous Create, Read, Update, and Delete operations. 
         /// </summary>
         [Fact]
-        public void role_async_crud_process_succeeds()
+        public void async_crud_process_succeeds()
         {
 
             var applicationRole = new ApplicationRole

@@ -30,6 +30,7 @@
                 <ModulePath>Pubs.IntegrationTests.dll</ModulePath>
                 <ModulePath>Pubs.SharedKernel.Tests.dll</ModulePath>
                 <ModulePath>Pubs.UnitTests.dll</ModulePath>
+                <ModulePath>Pubs.UnitTests.Persistence.dll</ModulePath>
               </Exclude>
             </ModulePaths>
             <UseVerifiableInstrumentation>True</UseVerifiableInstrumentation>
