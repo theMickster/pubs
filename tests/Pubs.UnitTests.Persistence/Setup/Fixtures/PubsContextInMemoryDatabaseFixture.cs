@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Pubs.CoreDomain.Constants;
 using Pubs.CoreDomain.Entities;
 using Pubs.CoreDomain.Entities.Security;
 using Pubs.Infrastructure.Persistence.DbContexts;
+using System;
+using System.Collections.Generic;
 
-namespace Pubs.UnitTests.Setup.Fixtures
+namespace Pubs.UnitTests.Persistence.Setup.Fixtures
 {
     public class PubsContextInMemoryDatabaseFixture : IDisposable
     {

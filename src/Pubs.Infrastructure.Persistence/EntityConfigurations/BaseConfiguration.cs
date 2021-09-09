@@ -4,11 +4,18 @@ namespace Pubs.Infrastructure.Persistence.EntityConfigurations
 {
     public abstract class BaseConfiguration
     {
-        protected readonly string _schema;
+        protected readonly string _schema = "dbo";
 
         public BaseConfiguration(string schema)
         {
-            _schema = schema;
+            if(!string.IsNullOrWhiteSpace(schema))
+            {
+                _schema = schema;
+            }            
+        }
+
+        public BaseConfiguration()
+        {
         }
     }
 }

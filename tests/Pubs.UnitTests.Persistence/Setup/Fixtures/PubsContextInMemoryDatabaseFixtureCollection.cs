@@ -1,4 +1,5 @@
 ﻿using Pubs.SharedKernel.Tests.Constants;
+using Pubs.UnitTests.Persistence.Setup.Fixtures;
 using Xunit;
 
 namespace Pubs.UnitTests.Setup.Fixtures

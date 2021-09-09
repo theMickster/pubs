@@ -4,6 +4,7 @@ using Pubs.Application.Interfaces.DbContexts;
 using Pubs.CoreDomain.Entities;
 using Pubs.CoreDomain.Entities.Security;
 using Pubs.Infrastructure.Persistence.EntityConfigurations;
+using System.Reflection;
 
 namespace Pubs.Infrastructure.Persistence.DbContexts
 {

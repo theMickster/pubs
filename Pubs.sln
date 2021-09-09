@@ -35,6 +35,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{D7D641C5-76BE-
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pubs.UI", "src\Pubs.UI\Pubs.UI.csproj", "{2183B4A8-3AE4-4F66-9767-D2E2E9BEEB77}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pubs.UnitTests.Persistence", "tests\Pubs.UnitTests.Persistence\Pubs.UnitTests.Persistence.csproj", "{CAEEB6D3-F0E6-4E3B-A6FE-C334125608FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{2183B4A8-3AE4-4F66-9767-D2E2E9BEEB77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2183B4A8-3AE4-4F66-9767-D2E2E9BEEB77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2183B4A8-3AE4-4F66-9767-D2E2E9BEEB77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAEEB6D3-F0E6-4E3B-A6FE-C334125608FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAEEB6D3-F0E6-4E3B-A6FE-C334125608FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAEEB6D3-F0E6-4E3B-A6FE-C334125608FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAEEB6D3-F0E6-4E3B-A6FE-C334125608FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -100,6 +106,7 @@ Global
 		{C5581209-3334-4B2B-9A88-1C53FE99D4AC} = {5B9F3EA0-903D-463D-A605-AC5302FFE5D3}
 		{D7D641C5-76BE-4E03-82F7-3B8C7F3480BE} = {3EC0CAE7-BDEC-48F2-BCEE-8F1C552A4521}
 		{2183B4A8-3AE4-4F66-9767-D2E2E9BEEB77} = {D7D641C5-76BE-4E03-82F7-3B8C7F3480BE}
+		{CAEEB6D3-F0E6-4E3B-A6FE-C334125608FD} = {5B9F3EA0-903D-463D-A605-AC5302FFE5D3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {81BF9FC0-C45A-448A-94AB-3F7DA3EC3BC2}

@@ -3,14 +3,14 @@ using FluentAssertions.Execution;
 using Pubs.CoreDomain.Entities;
 using Pubs.Infrastructure.Persistence.Repositories;
 using Pubs.SharedKernel.Tests.Constants;
-using Pubs.UnitTests.Setup;
-using Pubs.UnitTests.Setup.Fixtures;
+using Pubs.UnitTests.Persistence.Setup;
+using Pubs.UnitTests.Persistence.Setup.Fixtures;
 using Xunit;
 
 namespace Pubs.UnitTests.Infrastructure.Repositories
 {
     [Collection(FixtureCollections.PubsInMemoryRepositoryCollection)]
-    public class EmployeeRepositoryTests : UnitTestBase
+    public class EmployeeRepositoryTests : PersistenceUnitTestBase
     {
         private readonly EmployeeRepository _repository;
 
