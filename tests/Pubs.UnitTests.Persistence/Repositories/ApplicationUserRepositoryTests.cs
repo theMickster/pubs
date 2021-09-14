@@ -1,6 +1,5 @@
 ﻿using FluentAssertions;
 using FluentAssertions.Execution;
-using Pubs.CoreDomain.Entities;
 using Pubs.CoreDomain.Entities.Security;
 using Pubs.Infrastructure.Persistence.Repositories;
 using Pubs.SharedKernel.Tests.Constants;
