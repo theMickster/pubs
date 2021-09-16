@@ -1,0 +1,40 @@
+{
+    "id": "1991:BAB7E857-3D66-4EA6-981E-AC2136B273A0",
+    "TitleNumber": 4,
+    "TitleCode": "PS3333",
+    "Title": "Prolonged Data Deprivation: Four Case Studies",
+    "TitleType": "psychology  ",
+    "PublisherCode": "0736",
+    "Price": 19.99,
+    "PublishedDate": "1991-06-12T00:00:00",
+    "publishYear": "1991",
+    "Publisher": {
+        "Id": "AAA44A90-DB17-429A-9153-262144409BD3",
+        "PublisherNumber": 1,
+        "Code": "0736",
+        "Name": "New Moon Books",
+        "City": "Boston",
+        "State": "MA"
+    },
+    "authors": [
+        {
+            "Id": "5E73D846-4708-40A0-945F-8275845290C3",
+            "AuthorNumber": 18,
+            "Code": "172-32-1176",
+            "FirstName": "Johnson",
+            "LastName": "White",
+            "PhoneNumber": "408 496-7223",
+            "Address": {
+                "AddressLine01": "10932 Bigge Rd.",
+                "City": "Menlo Park",
+                "State": "CA",
+                "ZipCode": "94025"
+            }
+        }
+    ],
+    "_rid": "YvRgAMPSQzAEAAAAAAAAAA==",
+    "_self": "dbs/YvRgAA==/colls/YvRgAMPSQzA=/docs/YvRgAMPSQzAEAAAAAAAAAA==/",
+    "_etag": "\"0800dc11-0000-0700-0000-5d9f82d60000\"",
+    "_attachments": "attachments/",
+    "_ts": 1570734806
+}

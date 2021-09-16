@@ -1,0 +1,54 @@
+{
+    "id": "1991:8A966951-F309-4DED-8886-7A61516EBAE6",
+    "TitleNumber": 11,
+    "TitleCode": "PS2091",
+    "Title": "Is Anger the Enemy?",
+    "TitleType": "psychology  ",
+    "PublisherCode": "0736",
+    "Price": 10.95,
+    "PublishedDate": "1991-06-15T00:00:00",
+    "publishYear": "1991",
+    "Publisher": {
+        "Id": "AAA44A90-DB17-429A-9153-262144409BD3",
+        "PublisherNumber": 1,
+        "Code": "0736",
+        "Name": "New Moon Books",
+        "City": "Boston",
+        "State": "MA"
+    },
+    "authors": [
+        {
+            "Id": "C7CF25C8-0D54-437E-9017-73ACEA7280FD",
+            "AuthorNumber": 4,
+            "Code": "998-72-3567",
+            "FirstName": "Albert",
+            "LastName": "Ringer",
+            "PhoneNumber": "801 826-0752",
+            "Address": {
+                "AddressLine01": "67 Seventh Av.",
+                "City": "Salt Lake City",
+                "State": "UT",
+                "ZipCode": "84152"
+            }
+        },
+        {
+            "Id": "3BB8EA7E-007B-46F3-8172-777AEE28E6DB",
+            "AuthorNumber": 5,
+            "Code": "899-46-2035",
+            "FirstName": "Anne",
+            "LastName": "Ringer",
+            "PhoneNumber": "801 826-0752",
+            "Address": {
+                "AddressLine01": "67 Seventh Av.",
+                "City": "Salt Lake City",
+                "State": "UT",
+                "ZipCode": "84152"
+            }
+        }
+    ],
+    "_rid": "YvRgAMPSQzAOAAAAAAAAAA==",
+    "_self": "dbs/YvRgAA==/colls/YvRgAMPSQzA=/docs/YvRgAMPSQzAOAAAAAAAAAA==/",
+    "_etag": "\"08006216-0000-0700-0000-5d9f83190000\"",
+    "_attachments": "attachments/",
+    "_ts": 1570734873
+}
