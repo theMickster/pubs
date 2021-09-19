@@ -1,0 +1,40 @@
+{
+    "id": "1995:7FD41725-E18A-41F7-A86E-9B218A2FFE5E",
+    "TitleNumber": 9,
+    "TitleCode": "PC1035",
+    "Title": "But Is It User Friendly?",
+    "TitleType": "popular_comp",
+    "PublisherCode": "1389",
+    "Price": 22.95,
+    "PublishedDate": "1995-06-30T00:00:00",
+    "publishYear": "1995",
+    "Publisher": {
+        "Id": "361885D7-009D-48C5-9D3E-88700D180401",
+        "PublisherNumber": 3,
+        "Code": "1389",
+        "Name": "Algodata Infosystems",
+        "City": "Berkeley",
+        "State": "CA"
+    },
+    "authors": [
+        {
+            "Id": "F7ABAF85-4197-4371-87E0-86CAF7BB858D",
+            "AuthorNumber": 3,
+            "Code": "238-95-7766",
+            "FirstName": "Cheryl",
+            "LastName": "Carson",
+            "PhoneNumber": "415 548-7723",
+            "Address": {
+                "AddressLine01": "589 Darwin Ln.",
+                "City": "Berkeley",
+                "State": "CA",
+                "ZipCode": "94705"
+            }
+        }
+    ],
+    "_rid": "YvRgAMPSQzAQAAAAAAAAAA==",
+    "_self": "dbs/YvRgAA==/colls/YvRgAMPSQzA=/docs/YvRgAMPSQzAQAAAAAAAAAA==/",
+    "_etag": "\"0800a417-0000-0700-0000-5d9f83250000\"",
+    "_attachments": "attachments/",
+    "_ts": 1570734886
+}

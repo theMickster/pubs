@@ -1,0 +1,40 @@
+{
+    "id": "1995:83700A81-131C-4CD5-8AAD-37E1A88CE914",
+    "TitleNumber": 10,
+    "TitleCode": "BU2075",
+    "Title": "You Can Combat Computer Stress!",
+    "TitleType": "business    ",
+    "PublisherCode": "0736",
+    "Price": 2.99,
+    "PublishedDate": "1995-06-30T00:00:00",
+    "publishYear": "1995",
+    "Publisher": {
+        "Id": "AAA44A90-DB17-429A-9153-262144409BD3",
+        "PublisherNumber": 1,
+        "Code": "0736",
+        "Name": "New Moon Books",
+        "City": "Boston",
+        "State": "MA"
+    },
+    "authors": [
+        {
+            "Id": "213CE550-01F1-4FB2-9836-5217E500A9CF",
+            "AuthorNumber": 2,
+            "Code": "213-46-8915",
+            "FirstName": "Marjorie",
+            "LastName": "Green",
+            "PhoneNumber": "415 986-7020",
+            "Address": {
+                "AddressLine01": "309 63rd St. #411",
+                "City": "Oakland",
+                "State": "CA",
+                "ZipCode": "94618"
+            }
+        }
+    ],
+    "_rid": "YvRgAMPSQzAPAAAAAAAAAA==",
+    "_self": "dbs/YvRgAA==/colls/YvRgAMPSQzA=/docs/YvRgAMPSQzAPAAAAAAAAAA==/",
+    "_etag": "\"0800f016-0000-0700-0000-5d9f831f0000\"",
+    "_attachments": "attachments/",
+    "_ts": 1570734879
+}

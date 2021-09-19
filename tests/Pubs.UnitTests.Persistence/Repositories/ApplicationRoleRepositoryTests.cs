@@ -3,14 +3,14 @@ using FluentAssertions.Execution;
 using Pubs.CoreDomain.Entities.Security;
 using Pubs.Infrastructure.Persistence.Repositories;
 using Pubs.SharedKernel.Tests.Constants;
-using Pubs.UnitTests.Setup;
-using Pubs.UnitTests.Setup.Fixtures;
+using Pubs.UnitTests.Persistence.Setup;
+using Pubs.UnitTests.Persistence.Setup.Fixtures;
 using Xunit;
 
-namespace Pubs.UnitTests.Infrastructure.Repositories
+namespace Pubs.UnitTests.Persistence.Repositories
 {
     [Collection(FixtureCollections.PubsInMemoryRepositoryCollection)]
-    public class ApplicationRoleRepositoryTests : UnitTestBase
+    public class ApplicationRoleRepositoryTests : PersistenceUnitTestBase
     {
         private readonly ApplicationRoleRepository _repository;
 
@@ -23,7 +23,7 @@ namespace Pubs.UnitTests.Infrastructure.Repositories
         /// Unit test to cover synchronous Create, Read, Update, and Delete operations. 
         /// </summary>
         [Fact]
-        public void role_crud_process_succeeds()
+        public void crud_process_succeeds()
         {
             var applicationRole = new ApplicationRole
             {
@@ -56,7 +56,7 @@ namespace Pubs.UnitTests.Infrastructure.Repositories
         /// Unit test to cover asynchronous Create, Read, Update, and Delete operations. 
         /// </summary>
         [Fact]
-        public void role_async_crud_process_succeeds()
+        public void async_crud_process_succeeds()
         {
 
             var applicationRole = new ApplicationRole

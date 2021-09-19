@@ -32,6 +32,10 @@ namespace Pubs.Infrastructure.Persistence.EntityConfigurations
             
             builder.Property(a => a.PublishedDate).HasColumnName("published_date");
 
+            builder.Property(a => a.Price).HasColumnType("Money");
+
+            builder.Property(a => a.Advance).HasColumnType("Money");
+
             builder.HasOne(a => a.Publisher)
                 .WithMany(b => b.Titles)
                 .HasForeignKey(a => a.PublisherId);

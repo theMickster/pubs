@@ -21,7 +21,7 @@ namespace Pubs.UnitTests.Domain.Entities
                     Id = 2,
                     RoleName = "PowerUser"
                 },
-                ApplicationUser = new ApplicationUser(1, TestRunDate)
+                ApplicationUser = new ApplicationUser(TestRunDate)
                 {
                     Id = 3,
                     FirstName = "Unit",

@@ -1,0 +1,40 @@
+{
+    "id": "1990:CF29B4A1-742E-49CF-B080-751845E05CB7",
+    "TitleNumber": 18,
+    "TitleCode": "PC9999",
+    "Title": "Net Etiquette",
+    "TitleType": "popular_comp",
+    "PublisherCode": "1389",
+    "Price": 15.95,
+    "PublishedDate": "1990-07-20T00:00:00",
+    "publishYear": "1990",
+    "Publisher": {
+        "Id": "361885D7-009D-48C5-9D3E-88700D180401",
+        "PublisherNumber": 3,
+        "Code": "1389",
+        "Name": "Algodata Infosystems",
+        "City": "Berkeley",
+        "State": "CA"
+    },
+    "authors": [
+        {
+            "Id": "B419CBDE-FAA4-46EA-8BC0-8F7D2885EA4E",
+            "AuthorNumber": 21,
+            "Code": "486-29-1786",
+            "FirstName": "Charlene",
+            "LastName": "Locksley",
+            "PhoneNumber": "415 585-4620",
+            "Address": {
+                "AddressLine01": "18 Broadway Av.",
+                "City": "San Francisco",
+                "State": "CA",
+                "ZipCode": "94130"
+            }
+        }
+    ],
+    "_rid": "YvRgAMPSQzAHAAAAAAAAAA==",
+    "_self": "dbs/YvRgAA==/colls/YvRgAMPSQzA=/docs/YvRgAMPSQzAHAAAAAAAAAA==/",
+    "_etag": "\"08004613-0000-0700-0000-5d9f82ea0000\"",
+    "_attachments": "attachments/",
+    "_ts": 1570734826
+}

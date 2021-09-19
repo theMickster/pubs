@@ -1,0 +1,54 @@
+{
+    "id": "1993:550ABCBA-0FF6-47AD-AA98-5F02ABB0DEF7",
+    "TitleNumber": 5,
+    "TitleCode": "BU1111",
+    "Title": "Cooking with Computers: Surreptitious Balance Sheets",
+    "TitleType": "business    ",
+    "PublisherCode": "1389",
+    "Price": 11.95,
+    "PublishedDate": "1993-06-09T00:00:00",
+    "publishYear": "1993",
+    "Publisher": {
+        "Id": "361885D7-009D-48C5-9D3E-88700D180401",
+        "PublisherNumber": 3,
+        "Code": "1389",
+        "Name": "Algodata Infosystems",
+        "City": "Berkeley",
+        "State": "CA"
+    },
+    "authors": [
+        {
+            "Id": "49D751DA-4883-4EFB-B653-F8DF9C538190",
+            "AuthorNumber": 12,
+            "Code": "724-80-9391",
+            "FirstName": "Stearns",
+            "LastName": "MacFeather",
+            "PhoneNumber": "415 354-7128",
+            "Address": {
+                "AddressLine01": "44 Upland Hts.",
+                "City": "Oakland",
+                "State": "CA",
+                "ZipCode": "94612"
+            }
+        },
+        {
+            "Id": "3BED83F8-DE54-425D-BD77-FC6B18904D7C",
+            "AuthorNumber": 15,
+            "Code": "267-41-2394",
+            "FirstName": "Michael",
+            "LastName": "O'Leary",
+            "PhoneNumber": "408 286-2428",
+            "Address": {
+                "AddressLine01": "22 Cleveland Av. #14",
+                "City": "San Jose",
+                "State": "CA",
+                "ZipCode": "95128"
+            }
+        }
+    ],
+    "_rid": "YvRgAMPSQzAFAAAAAAAAAA==",
+    "_self": "dbs/YvRgAA==/colls/YvRgAMPSQzA=/docs/YvRgAMPSQzAFAAAAAAAAAA==/",
+    "_etag": "\"08006112-0000-0700-0000-5d9f82dc0000\"",
+    "_attachments": "attachments/",
+    "_ts": 1570734812
+}

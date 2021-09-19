@@ -6,10 +6,16 @@ namespace Pubs.CoreDomain.Entities.Security
 {
     public class ApplicationUser : BaseEntity
     {
-        public ApplicationUser(int applicationUserStatusId, DateTime? lastSuccessfulLogin)
+        public ApplicationUser(DateTime? lastSuccessfulLogin)
         {
-            ApplicationUserStatusId = applicationUserStatusId;
             LastSuccessfulLogin = lastSuccessfulLogin;
+        }
+
+        public ApplicationUser(DateTime? lastSuccessfulLogin, ApplicationUserStatus applicationUserStatus)
+        {
+            LastSuccessfulLogin = lastSuccessfulLogin;
+            ApplicationUserStatus = applicationUserStatus;
+            ApplicationUserStatusId = applicationUserStatus.Id;
         }
 
         public string UserName { get; set; }
@@ -26,7 +32,7 @@ namespace Pubs.CoreDomain.Entities.Security
 
         public string PhoneNumber { get; set; }
 
-        public int ApplicationUserStatusId { get; }
+        public int ApplicationUserStatusId { get; private set; }
 
         public DateTime? LastSuccessfulLogin { get; private set; }
         
@@ -36,7 +42,7 @@ namespace Pubs.CoreDomain.Entities.Security
         
         public bool IsLocked => ApplicationUserStatusId == 1003;
 
-        public ApplicationUserStatus ApplicationUserStatus { get; set; }
+        public ApplicationUserStatus ApplicationUserStatus { get; private set; }
 
         public ICollection<ApplicationUserRole> ApplicationUserRoles { get; set; }
 
@@ -54,6 +60,15 @@ namespace Pubs.CoreDomain.Entities.Security
                 }
 
                 LastSuccessfulLogin = lastLoginDate;
+            }
+        }
+
+        public void UpdateApplicationUserStatus(ApplicationUserStatus updatedUserStatus)
+        {
+            if(ApplicationUserStatusId != updatedUserStatus.Id)
+            {
+                ApplicationUserStatus = updatedUserStatus;
+                ApplicationUserStatusId = updatedUserStatus.Id;
             }
         }
     }

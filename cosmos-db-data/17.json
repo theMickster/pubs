@@ -1,0 +1,54 @@
+{
+    "id": "1995:CCD2E9F1-00B8-4855-991B-5FBF22109236",
+    "TitleNumber": 17,
+    "TitleCode": "PS1372",
+    "Title": "Computer Phobic AND Non-Phobic Individuals: Behavior Variations",
+    "TitleType": "psychology  ",
+    "PublisherCode": "0877",
+    "Price": 21.59,
+    "PublishedDate": "1995-10-21T00:00:00",
+    "publishYear": "1995",
+    "Publisher": {
+        "Id": "E30CE028-B570-4FB8-9BD9-C32EDBE40B3D",
+        "PublisherNumber": 2,
+        "Code": "0877",
+        "Name": "Binnet & Hardley",
+        "City": "Washington",
+        "State": "DC"
+    },
+    "authors": [
+        {
+            "Id": "6E1A5C38-B54C-4F53-9F09-42CFD1A4BBA5",
+            "AuthorNumber": 11,
+            "Code": "756-30-7391",
+            "FirstName": "Livia",
+            "LastName": "Karsen",
+            "PhoneNumber": "415 534-9219",
+            "Address": {
+                "AddressLine01": "5720 McAuley St.",
+                "City": "Oakland",
+                "State": "CA",
+                "ZipCode": "94609"
+            }
+        },
+        {
+            "Id": "49D751DA-4883-4EFB-B653-F8DF9C538190",
+            "AuthorNumber": 12,
+            "Code": "724-80-9391",
+            "FirstName": "Stearns",
+            "LastName": "MacFeather",
+            "PhoneNumber": "415 354-7128",
+            "Address": {
+                "AddressLine01": "44 Upland Hts.",
+                "City": "Oakland",
+                "State": "CA",
+                "ZipCode": "94612"
+            }
+        }
+    ],
+    "_rid": "YvRgAMPSQzAIAAAAAAAAAA==",
+    "_self": "dbs/YvRgAA==/colls/YvRgAMPSQzA=/docs/YvRgAMPSQzAIAAAAAAAAAA==/",
+    "_etag": "\"0800ae13-0000-0700-0000-5d9f82f20000\"",
+    "_attachments": "attachments/",
+    "_ts": 1570734834
+}

@@ -1,0 +1,54 @@
+{
+    "id": "1991:A6C40FC7-D330-4BEB-A043-A01130037E19",
+    "TitleNumber": 2,
+    "TitleCode": "BU1032",
+    "Title": "The Busy Executive's Database Guide",
+    "TitleType": "business    ",
+    "PublisherCode": "1389",
+    "Price": 19.99,
+    "PublishedDate": "1991-06-12T00:00:00",
+    "publishYear": "1991",
+    "Publisher": {
+        "Id": "361885D7-009D-48C5-9D3E-88700D180401",
+        "PublisherNumber": 3,
+        "Code": "1389",
+        "Name": "Algodata Infosystems",
+        "City": "Berkeley",
+        "State": "CA"
+    },
+    "authors": [
+        {
+            "Id": "4A76E276-C45D-4E3E-A091-6A6217D64931",
+            "AuthorNumber": 1,
+            "Code": "409-56-7008",
+            "FirstName": "Abraham",
+            "LastName": "Bennet",
+            "PhoneNumber": "415 658-9932",
+            "Address": {
+                "AddressLine01": "6223 Bateman St.",
+                "City": "Berkeley",
+                "State": "CA",
+                "ZipCode": "94705"
+            }
+        },
+        {
+            "Id": "213CE550-01F1-4FB2-9836-5217E500A9CF",
+            "AuthorNumber": 2,
+            "Code": "213-46-8915",
+            "FirstName": "Marjorie",
+            "LastName": "Green",
+            "PhoneNumber": "415 986-7020",
+            "Address": {
+                "AddressLine01": "309 63rd St. #411",
+                "City": "Oakland",
+                "State": "CA",
+                "ZipCode": "94618"
+            }
+        }
+    ],
+    "_rid": "YvRgAMPSQzACAAAAAAAAAA==",
+    "_self": "dbs/YvRgAA==/colls/YvRgAMPSQzA=/docs/YvRgAMPSQzACAAAAAAAAAA==/",
+    "_etag": "\"0800b910-0000-0700-0000-5d9f82cb0000\"",
+    "_attachments": "attachments/",
+    "_ts": 1570734795
+}

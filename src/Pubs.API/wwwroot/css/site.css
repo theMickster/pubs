@@ -1,0 +1,22 @@
+﻿body {
+    background-color: #444444;
+    color: #ffffff;
+}
+
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+}
+
+
+.footer-version {
+    margin-right: auto !important;
+}
+
+.color-white {
+    color: #fff;
+}

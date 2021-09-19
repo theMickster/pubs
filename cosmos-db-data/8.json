@@ -1,0 +1,40 @@
+{
+    "id": "1993:E33D85D2-E6F4-4672-9ED0-E391DE18ECB9",
+    "TitleNumber": 8,
+    "TitleCode": "TC4203",
+    "Title": "Fifty Years in Buckingham Palace Kitchens",
+    "TitleType": "trad_cook   ",
+    "PublisherCode": "0877",
+    "Price": 11.95,
+    "PublishedDate": "1993-06-12T00:00:00",
+    "publishYear": "1993",
+    "Publisher": {
+        "Id": "E30CE028-B570-4FB8-9BD9-C32EDBE40B3D",
+        "PublisherNumber": 2,
+        "Code": "0877",
+        "Name": "Binnet & Hardley",
+        "City": "Washington",
+        "State": "DC"
+    },
+    "authors": [
+        {
+            "Id": "6C11938C-34E9-424B-8658-81628CC88D05",
+            "AuthorNumber": 22,
+            "Code": "648-92-1872",
+            "FirstName": "Reginald",
+            "LastName": "Blotchet-Halls",
+            "PhoneNumber": "503 745-6402",
+            "Address": {
+                "AddressLine01": "55 Hillsdale Bl.",
+                "City": "Corvallis",
+                "State": "OR",
+                "ZipCode": "97330"
+            }
+        }
+    ],
+    "_rid": "YvRgAMPSQzARAAAAAAAAAA==",
+    "_self": "dbs/YvRgAA==/colls/YvRgAMPSQzA=/docs/YvRgAMPSQzARAAAAAAAAAA==/",
+    "_etag": "\"08002318-0000-0700-0000-5d9f832d0000\"",
+    "_attachments": "attachments/",
+    "_ts": 1570734893
+}

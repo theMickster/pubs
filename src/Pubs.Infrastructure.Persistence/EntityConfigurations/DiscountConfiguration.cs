@@ -30,6 +30,8 @@ namespace Pubs.Infrastructure.Persistence.EntityConfigurations
 
             builder.Property(a => a.DiscountAmount).HasColumnName("discount");
 
+            builder.Property(a => a.DiscountAmount).HasColumnType("decimal(4,2)");
+
             builder.HasOne(a => a.Store)
                 .WithMany(b => b.Discounts)
                 .HasForeignKey(a => a.StoreId);
