@@ -1,10 +1,12 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Pubs.API.Extensions;
+using System;
 using System.Collections.Generic;
 
 namespace Pubs.API
@@ -46,8 +48,13 @@ namespace Pubs.API
 
             services.RegisterPubsDataServices(Configuration);
 
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-            services.AddControllers();
+            services.AddControllers(action =>{
+                    action.ReturnHttpNotAcceptable = true;})
+                .AddXmlSerializerFormatters()
+                .AddXmlDataContractSerializerFormatters(); 
+
 
             services.AddSwagger(Configuration);
 
@@ -68,6 +75,18 @@ namespace Pubs.API
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Pubs.API v1"));
+            }
+            else
+            {
+                app.UseExceptionHandler(appBuilder =>
+                {
+                    appBuilder.Run(async context =>
+                    {
+                        context.Response.StatusCode = 500;
+                        await context.Response.WriteAsync("An unexpected fault happened. Try again later.");
+                    });
+                });
+
             }
 
             app.UseHttpsRedirection();

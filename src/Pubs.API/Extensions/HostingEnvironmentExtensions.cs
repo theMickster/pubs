@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
 
 namespace Pubs.API.Extensions
 {
@@ -22,6 +23,18 @@ namespace Pubs.API.Extensions
         {
             return webHostEnvironment.EnvironmentName == Test ||
                    webHostEnvironment.EnvironmentName == Uat;
+        }
+
+        public static bool IsOneOfOurDevelopmentEnvironments(this IHostEnvironment hostEnvironment)
+        {
+            return hostEnvironment.EnvironmentName == Obiwankenobi ||
+                   hostEnvironment.EnvironmentName == Development;
+        }
+
+        public static bool IsOneOfOurTestEnvironments(this IHostEnvironment hostEnvironment)
+        {
+            return hostEnvironment.EnvironmentName == Test ||
+                   hostEnvironment.EnvironmentName == Uat;
         }
     }
 }
