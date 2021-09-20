@@ -1,6 +1,7 @@
 ﻿{
   "ConnectionStrings": {
-    "DefaultConnection": ""
+    "DefaultConnection": "",
+    "SqlAzureConnection": ""
   },
   "DefaultSchema":  "dbo"
 }

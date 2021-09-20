@@ -3,10 +3,13 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve -o --port 4295",
     "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "server": "json-server --routes src/api/routes.json --watch src/api/database.json",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -18,6 +21,11 @@
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "bootstrap": "^5.1.1",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.6.0",
+    "popper.js": "^1.16.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

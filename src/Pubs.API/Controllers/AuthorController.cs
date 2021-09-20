@@ -103,6 +103,11 @@ namespace Pubs.API.Controllers
             return Ok();
         }
 
-
+        [HttpOptions]
+        public IActionResult GetAuthorsOptions()
+        {
+            Response.Headers.Add("Allow", "GET,OPTIONS,POST");
+            return Ok();
+        }
     }
 }
