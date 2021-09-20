@@ -39,9 +39,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pubs.UnitTests.Persistence"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{30BE03F7-8F27-463C-B30A-07C63EF4E5BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pubs.API", "src\Pubs.API\Pubs.API.csproj", "{49978398-5FFD-41D0-A1AB-63CDECAFEF69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pubs.API", "src\Pubs.API\Pubs.API.csproj", "{49978398-5FFD-41D0-A1AB-63CDECAFEF69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pubs.WebAPI.Tests", "tests\Pubs.WebAPI.Tests\Pubs.WebAPI.Tests.csproj", "{5613D591-F16D-443C-BFC6-60BB138F2DFF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pubs.WebAPI.Tests", "tests\Pubs.WebAPI.Tests\Pubs.WebAPI.Tests.csproj", "{5613D591-F16D-443C-BFC6-60BB138F2DFF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
