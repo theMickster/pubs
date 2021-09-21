@@ -1,6 +1,6 @@
 ﻿namespace Pubs.Application.DTOs
 {
-    public class AuthorCreationDto
+    public class AuthorCreateDto
     {
         public string AuthorCode { get; set; }
 
