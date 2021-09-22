@@ -126,6 +126,63 @@ namespace Pubs.API.Controllers
             return Ok(_mapper.Map<AuthorDto>(existingAuthor));
         }
 
+        [HttpPatch("customUpdateAuthorCode/{authorId:int}", Name = "PatchUpdateAuthorCode")]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> PatchUpdateAuthorCode(int authorId, [FromBody] AuthorUpdateAuthorCodeDto authorUpdateDto)
+        {
+            if (authorUpdateDto == null)
+            {
+                return BadRequest();
+            }
+
+            if (authorId != authorUpdateDto.AuthorId)
+            {
+                return BadRequest("The AuthorId parameter does not match the AuthorId in the request body.");
+            }
+
+            var existingAuthor = await _authorRepository.GetAuthorAsync(authorId);
+            if (existingAuthor == null)
+            {
+                return NotFound();
+            }
+
+            _mapper.Map(authorUpdateDto, existingAuthor);
+
+            await _authorRepository.UpdateAsync(existingAuthor);
+
+            _logger.LogInformation($"The author id:: {authorId} has been updated. The author code is now :: {authorUpdateDto.AuthorCode}");
+
+            return Ok(_mapper.Map<AuthorDto>(existingAuthor));
+        }
+
+        [HttpPatch("customUpdateAuthorContract/{authorId:int}", Name = "Patch")]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> PatchUpdateAuthorContract(int authorId, [FromBody] AuthorUpdateContractDto authorUpdateDto)
+        {
+            if (authorUpdateDto == null)
+            {
+                return BadRequest();
+            }
+
+            if (authorId != authorUpdateDto.AuthorId)
+            {
+                return BadRequest("The AuthorId parameter does not match the AuthorId in the request body.");
+            }
+
+            var existingAuthor = await _authorRepository.GetAuthorAsync(authorId);
+            if (existingAuthor == null)
+            {
+                return NotFound();
+            }
+
+            _mapper.Map(authorUpdateDto, existingAuthor);
+
+            await _authorRepository.UpdateAsync(existingAuthor);
+
+            _logger.LogInformation($"The author id:: {authorId} has been updated. The contract is :: {authorUpdateDto.Contract}");
+
+            return Ok(_mapper.Map<AuthorDto>(existingAuthor));
+        }
 
         [HttpOptions]
         public IActionResult GetAuthorsOptions()

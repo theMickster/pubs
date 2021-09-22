@@ -18,6 +18,11 @@ namespace Pubs.API.Profiles
             CreateMap<AuthorCreateDto, Author>();
 
             CreateMap<AuthorUpdateDto, Author>();
+
+            CreateMap<AuthorUpdateAuthorCodeDto, Author>();
+
+            CreateMap<AuthorUpdateContractDto, Author>();
+
         }
     }
 }
