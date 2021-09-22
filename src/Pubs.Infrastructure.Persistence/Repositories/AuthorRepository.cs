@@ -2,7 +2,9 @@
 using Pubs.Application.Interfaces.Repositories;
 using Pubs.CoreDomain.Entities;
 using Pubs.Infrastructure.Persistence.DbContexts;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Pubs.Infrastructure.Persistence.Repositories
@@ -29,9 +31,24 @@ namespace Pubs.Infrastructure.Persistence.Repositories
         /// Retrieves a list of all authors.
         /// </summary>
         /// <returns></returns>
-        public async  Task<List<Author>> GetAuthorsAsync()
+        public async Task<List<Author>> GetAuthorsAsync()
         {
             return await DbContext.Authors.ToListAsync();
+        }
+
+        /// <summary>
+        /// Determines if a given author code is currently in-use.
+        /// </summary>
+        /// <param name="authorCode">the author code related to an author.</param>
+        /// <returns><c>true</c>if the author code exists, otherwise <c>false</c>.</returns>
+        public bool IsAuthorCodeInUse(string authorCode)
+        {
+            if (string.IsNullOrWhiteSpace(authorCode))
+            {
+                throw new ArgumentException("Author code cannot be null or empty.", nameof(authorCode));
+            }
+
+            return DbContext.Authors.Any(x => x.AuthorCode == authorCode);
         }
     }
 }

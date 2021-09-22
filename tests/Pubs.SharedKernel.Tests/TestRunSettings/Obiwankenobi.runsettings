@@ -24,6 +24,7 @@
                 <ModulePath>.*\Pubs.Infrastructure.Persistence.dll</ModulePath>
                 <ModulePath>.*\Pubs.Infrastructure.Services.dll</ModulePath>
                 <ModulePath>.*\Pubs.UI.dll</ModulePath>
+                <ModulePath>.*\Pubs.API.dll</ModulePath>
               </Include>
               <Exclude>
                 <ModulePath>.*\.tests.dll</ModulePath>
@@ -31,6 +32,7 @@
                 <ModulePath>Pubs.SharedKernel.Tests.dll</ModulePath>
                 <ModulePath>Pubs.UnitTests.dll</ModulePath>
                 <ModulePath>Pubs.UnitTests.Persistence.dll</ModulePath>
+                <ModulePath>Pubs.UnitTests.WebAPI.dll</ModulePath>
               </Exclude>
             </ModulePaths>
             <UseVerifiableInstrumentation>True</UseVerifiableInstrumentation>

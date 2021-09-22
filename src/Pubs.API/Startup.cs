@@ -1,3 +1,4 @@
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -6,6 +7,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Pubs.API.Extensions;
+using Pubs.Application.DTOs;
+using Pubs.Application.Validators.Base;
+using Pubs.CoreDomain.Entities;
 using System;
 using System.Collections.Generic;
 
@@ -53,7 +57,12 @@ namespace Pubs.API
             services.AddControllers(action =>{
                     action.ReturnHttpNotAcceptable = true;})
                 .AddXmlSerializerFormatters()
-                .AddXmlDataContractSerializerFormatters(); 
+                .AddXmlDataContractSerializerFormatters()
+                .AddFluentValidation(s =>
+                {
+                    s.RegisterValidatorsFromAssemblyContaining<FluentValidator<AuthorCreateDto>>();
+                    s.DisableDataAnnotationsValidation = true;
+                });
 
 
             services.AddSwagger(Configuration);

@@ -105,5 +105,21 @@ namespace Pubs.IntegrationTests.Infrastructure.Repositories
                 }
             }
         }
+
+        [Fact]
+        public void author_code_is_unique_returns_false()
+        {
+            using (new AssertionScope())
+            {
+                _repository.IsAuthorCodeInUse("213-46-8915").Should().BeTrue();
+                _repository.IsAuthorCodeInUse("998-72-3567").Should().BeTrue();
+                _repository.IsAuthorCodeInUse("893-72-1158").Should().BeTrue();
+
+                _repository.IsAuthorCodeInUse("244-46-8915").Should().BeFalse();
+                _repository.IsAuthorCodeInUse("999-87-3567").Should().BeFalse();
+                _repository.IsAuthorCodeInUse("895-45-1158").Should().BeFalse();
+
+            }
+        }
     }
 }

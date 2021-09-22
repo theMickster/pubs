@@ -20,5 +20,11 @@ namespace Pubs.Application.Interfaces.Repositories
         /// <returns></returns>
         Task<Author> GetAuthorAsync(int id);
 
+        /// <summary>
+        /// Determines if a given author code is currently in-use.
+        /// </summary>
+        /// <param name="authorCode">the author code related to an author.</param>
+        /// <returns><c>true</c>if the author code exists, otherwise <c>false</c>.</returns>
+        bool IsAuthorCodeInUse(string authorCode);
     }
 }

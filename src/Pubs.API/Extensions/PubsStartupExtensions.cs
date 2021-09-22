@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
+using Pubs.API.Filter;
 using Pubs.Application.Interfaces.Repositories;
 using Pubs.CoreDomain.Settings;
 using Pubs.Infrastructure.Persistence.DbContexts;
@@ -59,7 +60,9 @@ namespace Pubs.API.Extensions
 
         public static IServiceCollection AddPubsCustomMVC(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddControllers(options => {} )
+            services.AddControllers(options => {
+                options.Filters.Add(typeof(ValidatorActionFilter));
+                })
              .AddJsonOptions(options => options.JsonSerializerOptions.WriteIndented = true);
 
             services.AddCors(options =>

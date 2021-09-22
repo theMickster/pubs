@@ -34,8 +34,8 @@ namespace Pubs.API.Controllers
 
         [HttpGet(Name = "GetAuthors")]
         [HttpHead]
-        [ProducesResponseType(typeof(List<Author>), StatusCodes.Status200OK)]
-        public async Task<ActionResult<List<Author>>> GetAuthors()
+        [ProducesResponseType(typeof(List<AuthorDto>), StatusCodes.Status200OK)]
+        public async Task<ActionResult<List<AuthorDto>>> GetAuthors()
         {
             var authorsFromRepo = await _authorRepository.GetAuthorsAsync();
 
