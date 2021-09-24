@@ -12,7 +12,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ps-2" id="pubs-nav-main-menu">
+      <ul class="navbar-nav ps-2" id="pubs-nav-main-menu" *ngIf="isLoggedIn">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">
             <i class="fas fa-feather-alt fa-lg me-2" id="pubs-sales-icon-editors"></i>
@@ -47,12 +47,25 @@
         </li>
       </ul>
 
-      <ul class="navbar-nav ms-auto pe-1" id="pubs-nav-user-menu">
+      
+
+
+      <ul class="navbar-nav ms-auto pe-1" id="pubs-nav-user-not-logged-in-menu" *ngIf="!isLoggedIn">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" [routerLink] = "['/login']" >
+            <i class="fas fa-sign-in-alt fa-lg me-2" id="pubs-user-login-admin"></i>
+            <span>Log In</span>
+
+          </a>
+        </li> 
+      </ul>
+
+      <ul class="navbar-nav ms-auto pe-3" id="pubs-nav-user-logged-in-menu" *ngIf="isLoggedIn">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button"
             data-bs-toggle="dropdown" aria-expanded="false">
             <i class="fas fa-user-ninja fa-lg me-2" id="pubs-user-dropdown-icon"></i>
-            <span class="pubs-dropdown-leader">My UserName</span>
+            <span class="pubs-dropdown-leader">{{ displayUserFullName }}</span>
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <li>
@@ -71,7 +84,7 @@
               <hr class="dropdown-divider">
             </li>
             <li>
-              <a href="#" class="dropdown-item">
+              <a href="#" class="dropdown-item" (click)="logout()">
                 <i class="fa fa-sign-out-alt me-2"></i>
                 <span>Logout</span>
               </a>
@@ -84,3 +97,9 @@
 
   </div>
 </nav>
+
+<div class="container">
+
+  <router-outlet></router-outlet>
+
+</div>
