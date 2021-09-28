@@ -135,7 +135,95 @@ namespace Pubs.UnitTests.API.Controllers
             }
         }
 
+        [Theory]
+        [MemberData(nameof(GetAuthorsData))]
+        public async Task get_author_async_succeeds(int authorId, int expectedStatusCode, Author author = null)
+        {
+            _mockAuthorRepository.Setup(s => s.GetAuthorAsync(It.IsAny<int>())).ReturnsAsync(author);
 
+            var sut = CreateAuthorController(_mockAuthorRepository, _mapper, _mockLogger);
+
+            var result = await sut.GetAuthor(authorId);
+
+            using (new AssertionScope())
+            {
+                if (expectedStatusCode == StatusCodes.Status200OK)
+                {
+                    var resultObject = result as OkObjectResult;
+                    resultObject.Value.Should().BeOfType<AuthorDto>();
+                    var authorDto = (AuthorDto)resultObject.Value;
+                    authorDto.AuthorId.Should().Be(authorId);
+                    authorDto.AuthorId.Should().Be(author.Id);
+                }
+                else
+                {
+                    result.Should().BeOfType<NotFoundResult>();
+                }
+            }
+        }
+
+        [Fact]
+        public void get_author_has_correct_attributes()
+        {
+            var sut = typeof(AuthorController)
+                        .GetMethods(BindingFlags.Public | BindingFlags.Instance)
+                        .SingleOrDefault(p => p.Name == nameof(AuthorController.GetAuthor));
+            
+            var httpGet = (HttpGetAttribute)Attribute.GetCustomAttribute(sut, typeof(HttpGetAttribute));
+            var responseTypeList = ((ProducesResponseTypeAttribute[])Attribute.GetCustomAttributes(sut, typeof(ProducesResponseTypeAttribute))).ToList();
+
+            using (new AssertionScope())
+            {
+                httpGet.Should().NotBeNull();
+                responseTypeList.Should().NotBeNull();
+
+                httpGet.Name.Should().Be("GetAuthor");
+
+                responseTypeList.Count(x => x.StatusCode == StatusCodes.Status200OK).Should().Be(1);
+                responseTypeList.Count(x => x.StatusCode == StatusCodes.Status404NotFound).Should().Be(1);
+            }
+        }
+
+        [Fact]
+        public void get_author_options_succeeds()
+        {
+            var sut = CreateAuthorController(_mockAuthorRepository, _mapper, _mockLogger);
+            _ = sut.GetAuthorsOptions();
+
+            var headers = sut.Response.Headers.ToList();
+            headers.Count(x => x.Value == "GET, OPTIONS, POST, HEAD, DELETE" && x.Key.ToLower() == "allow" ).Should().Be(1);                   
+        }
+
+        [Fact]
+        public void get_authors_options_has_correct_attributes()
+        {
+            var sut = typeof(AuthorController)
+                        .GetMethods(BindingFlags.Public | BindingFlags.Instance)
+                        .SingleOrDefault(p => p.Name == nameof(AuthorController.GetAuthorsOptions));
+
+            var httpAttribute= (HttpOptionsAttribute)Attribute.GetCustomAttribute(sut, typeof(HttpOptionsAttribute));
+
+            using (new AssertionScope())
+            {
+                httpAttribute.Should().NotBeNull();
+            }
+        }
+
+        #region Public Static Test Data Members
+
+        public static IEnumerable<object[]> GetAuthorsData =>
+            new List<object[]>
+            {
+                new object[] { 1, StatusCodes.Status200OK, new Author() {Id = 1, AuthorCode = "1" } },
+                new object[] { 2, StatusCodes.Status200OK, new Author() {Id = 2, AuthorCode = "2" } },
+                new object[] { 3, StatusCodes.Status200OK, new Author() {Id = 3, AuthorCode = "3" } },
+                new object[] { 777, StatusCodes.Status404NotFound },
+                new object[] { 787, StatusCodes.Status404NotFound},
+                new object[] { 797, StatusCodes.Status404NotFound}
+            };
+
+
+        #endregion Public Static Test Data Members
 
         #region Private Methods
 

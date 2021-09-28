@@ -60,7 +60,7 @@ namespace Pubs.Application.Validators.Base
         /// </summary>
         /// <param name="propertyName"></param>
         /// <returns></returns>
-        public IEnumerable GetWarningss(string propertyName = null)
+        public IEnumerable GetWarnings(string propertyName = null)
         {
             if (string.IsNullOrEmpty(propertyName))
             {

@@ -185,7 +185,7 @@ namespace Pubs.API.Controllers
         }
 
         [HttpOptions]
-        public IActionResult GetAuthorsOptions()
+        public ActionResult GetAuthorsOptions()
         {
             Response.Headers.Add("Allow", "GET, OPTIONS, POST, HEAD, DELETE");
             return Ok();

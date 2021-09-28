@@ -5,11 +5,10 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.OpenApi.Models;
 using Pubs.API.Extensions;
 using Pubs.Application.DTOs;
+using Pubs.Application.Infrastructure.Extensions;
 using Pubs.Application.Validators.Base;
-using Pubs.CoreDomain.Entities;
 using System;
 using System.Collections.Generic;
 
@@ -52,7 +51,7 @@ namespace Pubs.API
 
             services.RegisterPubsDataServices(Configuration);
 
-            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddAutoMapper(typeof(Startup));
 
             services.AddControllers(action =>{
                     action.ReturnHttpNotAcceptable = true;})

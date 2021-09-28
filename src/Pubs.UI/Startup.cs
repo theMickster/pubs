@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Pubs.UI.Extensions;
+using Pubs.Application.Infrastructure.Extensions;
 
 namespace Pubs.UI
 {

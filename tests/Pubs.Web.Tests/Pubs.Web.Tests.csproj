@@ -4,8 +4,6 @@
     <TargetFramework>net5.0</TargetFramework>
 
     <IsPackable>false</IsPackable>
-
-    <UserSecretsId>f5a9bbc0-76c2-454d-ad0f-4782a50d507b</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -31,14 +29,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Pubs.API\Pubs.API.csproj" />
-    <ProjectReference Include="..\Pubs.SharedKernel.Tests\Pubs.SharedKernel.Tests.csproj" />
+    <None Update="Pubs.Web.Tests.Settings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Pubs.WebAPI.Tests.Settings.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <ProjectReference Include="..\..\src\Pubs.UI\Pubs.UI.csproj" />
+    <ProjectReference Include="..\Pubs.SharedKernel.Tests\Pubs.SharedKernel.Tests.csproj" />
   </ItemGroup>
 
 </Project>

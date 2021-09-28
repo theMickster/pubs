@@ -1,7 +1,4 @@
 {
-  "PubsDbContextSource": "InMemory",
-  /*"PubsDbContextSource": "InMemory",*/
-  /*"PubsDbContextSource": "SqlServer",*/
   "EntityFrameworkCoreSettings": {
     "CommandLogLevel": "Warning",
     "ComamndTimeout": "60"
