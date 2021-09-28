@@ -1,4 +1,4 @@
-<p align="center"><img height=256 src="https://github.com/theMickster/pubs/blob/master/media/pubs_editor.jpg"></p>
+<p align="center"><img height=256 src="https://github.com/theMickster/pubs/blob/master/_media/pubs_editor.jpg"></p>
 
 # Pubs Web App 
 
