@@ -1,0 +1,40 @@
+{
+    "id": "1994:BB4C186B-5C1B-48DA-ACED-E14F2FFE8A98",
+    "TitleNumber": 16,
+    "TitleCode": "BU7832",
+    "Title": "Straight Talk About Computers",
+    "TitleType": "business    ",
+    "PublisherCode": "1389",
+    "Price": 19.99,
+    "PublishedDate": "1994-06-22T00:00:00",
+    "publishYear": "1994",
+    "Publisher": {
+        "Id": "361885D7-009D-48C5-9D3E-88700D180401",
+        "PublisherNumber": 3,
+        "Code": "1389",
+        "Name": "Algodata Infosystems",
+        "City": "Berkeley",
+        "State": "CA"
+    },
+    "authors": [
+        {
+            "Id": "3F5E7132-F204-40F8-8E73-2E7EF9FAC40C",
+            "AuthorNumber": 10,
+            "Code": "274-80-9391",
+            "FirstName": "Dean",
+            "LastName": "Straight",
+            "PhoneNumber": "415 834-2919",
+            "Address": {
+                "AddressLine01": "5420 College Av.",
+                "City": "Oakland",
+                "State": "CA",
+                "ZipCode": "94609"
+            }
+        }
+    ],
+    "_rid": "YvRgAMPSQzAJAAAAAAAAAA==",
+    "_self": "dbs/YvRgAA==/colls/YvRgAMPSQzA=/docs/YvRgAMPSQzAJAAAAAAAAAA==/",
+    "_etag": "\"08002914-0000-0700-0000-5d9f82f80000\"",
+    "_attachments": "attachments/",
+    "_ts": 1570734840
+}

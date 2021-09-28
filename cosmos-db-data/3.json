@@ -1,0 +1,40 @@
+{
+    "id": "1991:93D4C7E0-2460-496D-ADC9-D7C1336B98DC",
+    "TitleNumber": 3,
+    "TitleCode": "PS7777",
+    "Title": "Emotional Security: A New Algorithm",
+    "TitleType": "psychology  ",
+    "PublisherCode": "0736",
+    "Price": 7.99,
+    "PublishedDate": "1991-06-12T00:00:00",
+    "publishYear": "1991",
+    "Publisher": {
+        "Id": "AAA44A90-DB17-429A-9153-262144409BD3",
+        "PublisherNumber": 1,
+        "Code": "0736",
+        "Name": "New Moon Books",
+        "City": "Boston",
+        "State": "MA"
+    },
+    "authors": [
+        {
+            "Id": "B419CBDE-FAA4-46EA-8BC0-8F7D2885EA4E",
+            "AuthorNumber": 21,
+            "Code": "486-29-1786",
+            "FirstName": "Charlene",
+            "LastName": "Locksley",
+            "PhoneNumber": "415 585-4620",
+            "Address": {
+                "AddressLine01": "18 Broadway Av.",
+                "City": "San Francisco",
+                "State": "CA",
+                "ZipCode": "94130"
+            }
+        }
+    ],
+    "_rid": "YvRgAMPSQzADAAAAAAAAAA==",
+    "_self": "dbs/YvRgAA==/colls/YvRgAMPSQzA=/docs/YvRgAMPSQzADAAAAAAAAAA==/",
+    "_etag": "\"08003811-0000-0700-0000-5d9f82d00000\"",
+    "_attachments": "attachments/",
+    "_ts": 1570734800
+}

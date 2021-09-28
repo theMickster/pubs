@@ -1,0 +1,40 @@
+{
+    "id": "1994:67C99A9F-2494-4CD3-AF24-00E2F5CCEF07",
+    "TitleNumber": 12,
+    "TitleCode": "PS2106",
+    "Title": "Life Without Fear",
+    "TitleType": "psychology  ",
+    "PublisherCode": "0736",
+    "Price": 7,
+    "PublishedDate": "1994-10-05T00:00:00",
+    "publishYear": "1994",
+    "Publisher": {
+        "Id": "AAA44A90-DB17-429A-9153-262144409BD3",
+        "PublisherNumber": 1,
+        "Code": "0736",
+        "Name": "New Moon Books",
+        "City": "Boston",
+        "State": "MA"
+    },
+    "authors": [
+        {
+            "Id": "C7CF25C8-0D54-437E-9017-73ACEA7280FD",
+            "AuthorNumber": 4,
+            "Code": "998-72-3567",
+            "FirstName": "Albert",
+            "LastName": "Ringer",
+            "PhoneNumber": "801 826-0752",
+            "Address": {
+                "AddressLine01": "67 Seventh Av.",
+                "City": "Salt Lake City",
+                "State": "UT",
+                "ZipCode": "84152"
+            }
+        }
+    ],
+    "_rid": "YvRgAMPSQzANAAAAAAAAAA==",
+    "_self": "dbs/YvRgAA==/colls/YvRgAMPSQzA=/docs/YvRgAMPSQzANAAAAAAAAAA==/",
+    "_etag": "\"0800fe15-0000-0700-0000-5d9f83120000\"",
+    "_attachments": "attachments/",
+    "_ts": 1570734866
+}

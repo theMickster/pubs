@@ -1,0 +1,68 @@
+{
+    "id": "1992:ADFD3652-0E64-4C40-848E-C20490321B9F",
+    "TitleNumber": 7,
+    "TitleCode": "TC7777",
+    "Title": "Sushi, Anyone?",
+    "TitleType": "trad_cook   ",
+    "PublisherCode": "0877",
+    "Price": 14.99,
+    "PublishedDate": "1992-06-15T00:00:00",
+    "publishYear": "1992",
+    "Publisher": {
+        "Id": "E30CE028-B570-4FB8-9BD9-C32EDBE40B3D",
+        "PublisherNumber": 2,
+        "Code": "0877",
+        "Name": "Binnet & Hardley",
+        "City": "Washington",
+        "State": "DC"
+    },
+    "authors": [
+        {
+            "Id": "4C2E1577-6C57-430E-8428-66AB34A88464",
+            "AuthorNumber": 14,
+            "Code": "672-71-3249",
+            "FirstName": "Akiko",
+            "LastName": "Yokomoto",
+            "PhoneNumber": "415 935-4228",
+            "Address": {
+                "AddressLine01": "3 Silver Ct.",
+                "City": "Walnut Creek",
+                "State": "CA",
+                "ZipCode": "94595"
+            }
+        },
+        {
+            "Id": "3BED83F8-DE54-425D-BD77-FC6B18904D7C",
+            "AuthorNumber": 15,
+            "Code": "267-41-2394",
+            "FirstName": "Michael",
+            "LastName": "O'Leary",
+            "PhoneNumber": "408 286-2428",
+            "Address": {
+                "AddressLine01": "22 Cleveland Av. #14",
+                "City": "San Jose",
+                "State": "CA",
+                "ZipCode": "95128"
+            }
+        },
+        {
+            "Id": "64BAFA9C-D0F7-4863-AE9B-7B5392604E80",
+            "AuthorNumber": 16,
+            "Code": "472-27-2349",
+            "FirstName": "Burt",
+            "LastName": "Gringlesby",
+            "PhoneNumber": "707 938-6445",
+            "Address": {
+                "AddressLine01": "PO Box 792",
+                "City": "Covelo",
+                "State": "CA",
+                "ZipCode": "95428"
+            }
+        }
+    ],
+    "_rid": "YvRgAMPSQzASAAAAAAAAAA==",
+    "_self": "dbs/YvRgAA==/colls/YvRgAMPSQzA=/docs/YvRgAMPSQzASAAAAAAAAAA==/",
+    "_etag": "\"08009518-0000-0700-0000-5d9f83330000\"",
+    "_attachments": "attachments/",
+    "_ts": 1570734899
+}

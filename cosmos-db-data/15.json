@@ -1,0 +1,24 @@
+{
+    "id": "1996:BBDA2B78-D4D6-4C43-8E87-6CC2C11F7A09",
+    "TitleNumber": 15,
+    "TitleCode": "MC3026",
+    "Title": "The Psychology of Computer Cooking",
+    "TitleType": "trad_cook   ",
+    "PublisherCode": "0877",
+    "Price": 19.99,
+    "PublishedDate": "1996-05-15T00:00:00",
+    "publishYear": "1996",
+    "Publisher": {
+        "Id": "E30CE028-B570-4FB8-9BD9-C32EDBE40B3D",
+        "PublisherNumber": 2,
+        "Code": "0877",
+        "Name": "Binnet & Hardley",
+        "City": "Washington",
+        "State": "DC"
+    },
+    "_rid": "YvRgAMPSQzAKAAAAAAAAAA==",
+    "_self": "dbs/YvRgAA==/colls/YvRgAMPSQzA=/docs/YvRgAMPSQzAKAAAAAAAAAA==/",
+    "_etag": "\"08009714-0000-0700-0000-5d9f82fe0000\"",
+    "_attachments": "attachments/",
+    "_ts": 1570734846
+}

@@ -1,0 +1,159 @@
+{
+	"info": {
+		"_postman_id": "8df011e6-5248-41bb-9f84-f6d5d8af9b98",
+		"name": "Pubs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET Authors via HTTPS",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:44386/api/authors",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44386",
+					"path": [
+						"api",
+						"authors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HEAD Authors via HTTPS",
+			"request": {
+				"method": "HEAD",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:44386/api/authors",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44386",
+					"path": [
+						"api",
+						"authors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Author via HTTPS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44386/api/authors/2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44386",
+					"path": [
+						"api",
+						"authors",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Author via HTTPS",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"authorCode\": \"838-42-3299\",\r\n    \"firstName\": \"Julian\",\r\n    \"lastName\": \"Sharp\",\r\n    \"phoneNumber\": \"303-395-6779\",\r\n    \"zipCode\": \"80014\",\r\n    \"secret\": \"13246ABC\",\r\n    \"superSecret\": \";DROP TABLE dbo.Users; DROP TABLE dbo.AspUsers;\"\r\n}"
+				},
+				"url": {
+					"raw": "https://localhost:44386/api/authors/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44386",
+					"path": [
+						"api",
+						"authors",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Author (not exists) via HTTPS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44386/api/authors/-200",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44386",
+					"path": [
+						"api",
+						"authors",
+						"-200"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Authors via HTTP",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:44387/api/authors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "44387",
+					"path": [
+						"api",
+						"authors"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

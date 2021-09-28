@@ -1,0 +1,39 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+
+    {
+      "library": "jquery@3.6.0",
+      "destination": "wwwroot/lib/jquery/dist/"
+    },
+    {
+      "library": "bootbox.js@5.5.2",
+      "destination": "wwwroot/lib/bootbox.js/dist/"
+    },
+    {
+      "library": "font-awesome@5.15.3",
+      "destination": "wwwroot/lib/font-awesome/dist/"
+    },
+    {
+      "library": "jquery-validation-unobtrusive@3.2.12",
+      "destination": "wwwroot/lib/jquery-validation-unobtrusive/dist"
+    },
+    {
+      "library": "jquery-validate@1.19.2",
+      "destination": "wwwroot/lib/jquery-validation/dist"
+    },
+    {
+      "library": "popper.js@2.9.1",
+      "destination": "wwwroot/lib/popper.js/dist",
+      "files": [
+        "umd/popper.min.js",
+        "umd/popper.js"
+      ]
+    },
+    {
+      "library": "twitter-bootstrap@5.0.1",
+      "destination": "wwwroot/lib/bootstrap/dist"
+    }
+  ]
+}

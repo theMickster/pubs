@@ -1,0 +1,40 @@
+{
+    "id": "1992:06FC2D04-6485-4199-89E4-ED895AF5860F",
+    "TitleNumber": 14,
+    "TitleCode": "TC3218",
+    "Title": "Onions, Leeks, and Garlic: Cooking Secrets of the Mediterranean",
+    "TitleType": "trad_cook   ",
+    "PublisherCode": "0877",
+    "Price": 20.95,
+    "PublishedDate": "1992-10-21T00:00:00",
+    "publishYear": "1992",
+    "Publisher": {
+        "Id": "E30CE028-B570-4FB8-9BD9-C32EDBE40B3D",
+        "PublisherNumber": 2,
+        "Code": "0877",
+        "Name": "Binnet & Hardley",
+        "City": "Washington",
+        "State": "DC"
+    },
+    "authors": [
+        {
+            "Id": "8C8CBF75-38B5-4742-B65A-19313214CF04",
+            "AuthorNumber": 7,
+            "Code": "807-91-6654",
+            "FirstName": "Sylvia",
+            "LastName": "Panteley",
+            "PhoneNumber": "301 946-8853",
+            "Address": {
+                "AddressLine01": "1956 Arlington Pl.",
+                "City": "Rockville",
+                "State": "MD",
+                "ZipCode": "20853"
+            }
+        }
+    ],
+    "_rid": "YvRgAMPSQzALAAAAAAAAAA==",
+    "_self": "dbs/YvRgAA==/colls/YvRgAMPSQzA=/docs/YvRgAMPSQzALAAAAAAAAAA==/",
+    "_etag": "\"08000415-0000-0700-0000-5d9f83050000\"",
+    "_attachments": "attachments/",
+    "_ts": 1570734853
+}
