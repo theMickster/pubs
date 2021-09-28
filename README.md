@@ -1,3 +1,5 @@
+<p align="center"><img height=256 src="https://github.com/theMickster/pubs/blob/master/media/pubs_editor.jpg"></p>
+
 # Pubs Web App 
 
 We're taking it back WAY old school for this sample application with the Microsoft pubs sample database circa 2000. 
