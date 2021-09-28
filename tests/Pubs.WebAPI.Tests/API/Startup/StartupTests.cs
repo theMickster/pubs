@@ -76,5 +76,6 @@ namespace Pubs.WebAPI.Tests.API.Startup
                 scope.ServiceProvider.GetRequiredService<PubsContext>().Should().NotBeNull();
             }
         }
+
     }
 }

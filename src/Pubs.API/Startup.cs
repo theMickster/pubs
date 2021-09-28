@@ -53,16 +53,7 @@ namespace Pubs.API
 
             services.AddAutoMapper(typeof(Startup));
 
-            services.AddControllers(action =>{
-                    action.ReturnHttpNotAcceptable = true;})
-                .AddXmlSerializerFormatters()
-                .AddXmlDataContractSerializerFormatters()
-                .AddFluentValidation(s =>
-                {
-                    s.RegisterValidatorsFromAssemblyContaining<FluentValidator<AuthorCreateDto>>();
-                    s.DisableDataAnnotationsValidation = true;
-                });
-
+            services.AddPubsCustomMVC(Configuration);
 
             services.AddSwagger(Configuration);
 

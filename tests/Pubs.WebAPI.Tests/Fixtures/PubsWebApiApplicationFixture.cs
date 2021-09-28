@@ -84,6 +84,8 @@ namespace Pubs.WebAPI.Tests.Fixtures
                     inMemoryDatabase.SeedInMemoryDatabase();
                 }
             });
+
+            base.ConfigureWebHost(builder);
         }
     }
 }

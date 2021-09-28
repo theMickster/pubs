@@ -20,7 +20,7 @@ namespace Pubs.SharedKernel.Tests.Setup
 
         #region Public Properties
 
-        public DateTime TestRunDate => new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 1, 11, 11, 11);
+        public static DateTime TestRunDate => new(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 1, 11, 11, 11);
 
         #endregion Public Properties
 

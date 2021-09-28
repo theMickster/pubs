@@ -12,7 +12,7 @@ namespace Pubs.Application.Validators.Base
     {
         #region Private Fields
 
-        private readonly Dictionary<Guid, ValidationFailure> _errors = new Dictionary<Guid, ValidationFailure>();
+        private readonly Dictionary<Guid, ValidationFailure> _errors = new();
 
         #endregion Private Fields
 

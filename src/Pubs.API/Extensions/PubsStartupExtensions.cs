@@ -1,10 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using FluentValidation.AspNetCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Pubs.API.Filter;
+using Pubs.Application.DTOs;
 using Pubs.Application.Interfaces.Repositories;
+using Pubs.Application.Validators.Base;
 using Pubs.CoreDomain.Settings;
 using Pubs.Infrastructure.Persistence.DbContexts;
 using Pubs.Infrastructure.Persistence.Repositories;
@@ -62,12 +65,20 @@ namespace Pubs.API.Extensions
         {
             services.AddControllers(options => {
                 options.Filters.Add(typeof(ValidatorActionFilter));
+                options.ReturnHttpNotAcceptable = true;
                 })
-             .AddJsonOptions(options => options.JsonSerializerOptions.WriteIndented = true);
+                .AddJsonOptions(options => options.JsonSerializerOptions.WriteIndented = true)
+                .AddXmlSerializerFormatters()
+                .AddXmlDataContractSerializerFormatters()
+                .AddFluentValidation(s =>
+                {
+                    s.RegisterValidatorsFromAssemblyContaining<FluentValidator<AuthorCreateDto>>();
+                    s.DisableDataAnnotationsValidation = true;
+                });
 
             services.AddCors(options =>
             {
-                options.AddPolicy("CorsPolicy",
+                options.AddPolicy("PubsCorsPolicy",
                     builder => builder
                     .SetIsOriginAllowed((host) => true)
                     .AllowAnyMethod()

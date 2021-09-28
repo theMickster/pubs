@@ -8,7 +8,7 @@ namespace Pubs.SharedKernel.Tests.Factories
 {
     public class PubsTestDbContextFactory
     {
-        public PubsContext Create()
+        public static PubsContext Create()
         {
             var options = new DbContextOptionsBuilder<PubsContext>()
                             .UseInMemoryDatabase(Guid.NewGuid().ToString())
@@ -27,7 +27,7 @@ namespace Pubs.SharedKernel.Tests.Factories
             return context;
         }
 
-        public void Destroy(PubsContext context)
+        public static void Destroy(PubsContext context)
         {
             context.Database.EnsureDeleted();
             context.Dispose();
