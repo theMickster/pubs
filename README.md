@@ -3,6 +3,8 @@
 We're taking it back WAY old school for this sample application with the Microsoft pubs sample database circa 2000. 
 The project contains a variety of samples that showcase a variety of techniques for building web applications built upon ASP.NET Core in .NET 5 and Angular that utilize SQL Server as the storage mechanism. 
 
+For folks not as old as me, the Pubs database provides a set of fictional pieces of information about publishers, authors, titles and sales of books.
+
 ## Framework & Technologies used
 The sample application utilizes the following technologies
 * [Angular](https://angular.io/)
