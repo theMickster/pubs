@@ -7,8 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="SharedKernel\Utilities\**" />
+    <EmbeddedResource Remove="SharedKernel\Utilities\**" />
+    <None Remove="SharedKernel\Utilities\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="FluentAssertions" Version="6.1.0" />
-    <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.7" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
     <PackageReference Include="Moq" Version="4.16.1" />
     <PackageReference Include="Shouldly" Version="4.0.3" />
@@ -36,10 +41,6 @@
       <LastGenOutput>CodeCoverage.Designer.cs</LastGenOutput>
       <Generator>SettingsSingleFileGenerator</Generator>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="SharedKernel\Utilities\" />
   </ItemGroup>
 
 </Project>

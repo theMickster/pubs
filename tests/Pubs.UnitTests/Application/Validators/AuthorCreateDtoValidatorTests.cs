@@ -41,7 +41,16 @@ namespace Pubs.UnitTests.Application.Validators
 
             var result = _validator.TestValidate(sut);
 
-            result.ShouldNotHaveAnyValidationErrors();
+            using (new AssertionScope())
+            {
+                result.ShouldNotHaveAnyValidationErrors();
+                _validator.HasErrors.Should().BeFalse();
+                _validator.GetErrors().Should().NotBeNull();
+                _validator.GetAllErrors().Should().BeEmpty();
+                _validator.GetAllWarnings().Should().BeEmpty();
+                (_validator.GetErrors("AuthorCode") as List<string>).Should().BeEmpty();
+            }
+
         }
 
         [Fact]
@@ -56,11 +65,38 @@ namespace Pubs.UnitTests.Application.Validators
             };
 
             var result = _validator.TestValidate(sut);
+            _ = _validator.ValidateProperties(sut);
 
-            result.ShouldHaveValidationErrorFor(x => x.AuthorCode)
+            using (new AssertionScope())
+            {
+                result.ShouldHaveValidationErrorFor(x => x.AuthorCode)
                 .WithErrorMessage("Author Code cannot be null")
                 .WithSeverity(Severity.Error)
                 .WithErrorCode("A-Rule-001");
+
+
+                _validator.HasErrors.Should().BeTrue();
+                _validator.GetErrors().Should().NotBeNull();
+                _validator.GetAllErrors().Should().NotBeEmpty();
+                _validator.GetAllWarnings().Should().BeEmpty();
+
+                (_validator.GetErrors("AuthorCode") as List<string>).Should().NotBeEmpty();
+                (_validator.GetErrors() as List<string>).Should().NotBeEmpty();
+                (_validator.GetErrors("FirstName") as List<string>).Should().BeEmpty();
+
+                (_validator.GetWarnings("FirstName") as List<string>).Should().BeEmpty();
+                (_validator.GetWarnings() as List<string>).Should().BeEmpty();
+
+                ((Action)(() => _validator.GetErrors("AuthorId")))
+                    .Should().Throw<ArgumentException>()
+                    .And.Message.Should().Contain("Property name AuthorId does not exist in");
+
+                ((Action)(() => _validator.GetWarnings("AuthorId")))
+                    .Should().Throw<ArgumentException>()
+                    .And.Message.Should().Contain("Property name AuthorId does not exist in");
+
+                _validator.Errors.Count.Should().BeGreaterThan(0);
+            }
         }
 
         [Fact]

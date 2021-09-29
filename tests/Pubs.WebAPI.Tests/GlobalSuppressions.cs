@@ -6,3 +6,4 @@
 using System.Diagnostics.CodeAnalysis;
 
 [assembly: SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "Ignore recommended test methods naming conventions", Scope = "namespaceanddescendants", Target = "Pubs.WebAPI.Tests")]
+[assembly: SuppressMessage("CodeQuality", "IDE0077:Avoid legacy format target in 'SuppressMessageAttribute'", Justification = "<Pending>")]

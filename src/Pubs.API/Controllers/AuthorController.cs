@@ -46,7 +46,7 @@ namespace Pubs.API.Controllers
         [HttpGet("{authorId:int}", Name = "GetAuthor")]
         [ProducesResponseType(typeof(Author), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> GetAuthor(int authorId)
+        public async Task<ActionResult<Author>> GetAuthor(int authorId)
         {
             var author = await _authorRepository.GetAuthorAsync(authorId);
 
@@ -55,14 +55,14 @@ namespace Pubs.API.Controllers
                 return NotFound();
             }
 
-            return Ok(_mapper.Map<AuthorDto>(author));
+            return Ok(author);
         }
 
 
         [HttpPost(Name = "CreateAuthor")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(Author), StatusCodes.Status201Created)]
-        public async Task<IActionResult> CreateAuthor(AuthorCreateDto author)
+        public async Task<ActionResult<Author>> CreateAuthor(AuthorCreateDto author)
         {
             if (author == null)
             {
@@ -71,17 +71,15 @@ namespace Pubs.API.Controllers
 
             var authorEntity = _mapper.Map<Author>(author);
 
-            await _authorRepository.AddAsync(authorEntity);
+            var returnedEntity = await _authorRepository.AddAsync(authorEntity);
 
-            var authorToReturn = _mapper.Map<AuthorDto>(authorEntity);
-
-            return CreatedAtRoute("GetAuthor", new { authorId = authorToReturn.AuthorId }, authorToReturn);
+            return CreatedAtRoute("GetAuthor", new { authorId = returnedEntity.Id }, returnedEntity);
         }
 
         [HttpDelete("{authorId:int}", Name = "DeleteAuthor")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> DeleteAuthor(int authorId)
+        public async Task<ActionResult> DeleteAuthor(int authorId)
         {
             var author = await _authorRepository.GetAuthorAsync(authorId);
 
@@ -99,7 +97,9 @@ namespace Pubs.API.Controllers
 
         [HttpPut("{authorId:int}", Name = "UpdateAuthor")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> UpdateAuthor(int authorId, [FromBody] AuthorUpdateDto authorUpdate)
+        [ProducesResponseType(typeof(Author), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<Author>> UpdateAuthor(int authorId, [FromBody] AuthorUpdateDto authorUpdate)
         {
             if (authorUpdate == null)
             {
@@ -123,12 +123,14 @@ namespace Pubs.API.Controllers
 
             _logger.LogInformation($"The author id:: {authorId} has been updated.");
 
-            return Ok(_mapper.Map<AuthorDto>(existingAuthor));
+            return Ok(existingAuthor);
         }
 
         [HttpPatch("customUpdateAuthorCode/{authorId:int}", Name = "PatchUpdateAuthorCode")]
+        [ProducesResponseType(typeof(Author), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> PatchUpdateAuthorCode(int authorId, [FromBody] AuthorUpdateAuthorCodeDto authorUpdateDto)
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<Author>> PatchUpdateAuthorCode(int authorId, [FromBody] AuthorUpdateAuthorCodeDto authorUpdateDto)
         {
             if (authorUpdateDto == null)
             {
@@ -152,12 +154,14 @@ namespace Pubs.API.Controllers
 
             _logger.LogInformation($"The author id:: {authorId} has been updated. The author code is now :: {authorUpdateDto.AuthorCode}");
 
-            return Ok(_mapper.Map<AuthorDto>(existingAuthor));
+            return Ok(existingAuthor);
         }
 
-        [HttpPatch("customUpdateAuthorContract/{authorId:int}", Name = "Patch")]
+        [HttpPatch("customUpdateAuthorContract/{authorId:int}", Name = "PatchUpdateAuthorContract")]
+        [ProducesResponseType(typeof(Author), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> PatchUpdateAuthorContract(int authorId, [FromBody] AuthorUpdateContractDto authorUpdateDto)
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<Author>> PatchUpdateAuthorContract(int authorId, [FromBody] AuthorUpdateContractDto authorUpdateDto)
         {
             if (authorUpdateDto == null)
             {
@@ -181,11 +185,11 @@ namespace Pubs.API.Controllers
 
             _logger.LogInformation($"The author id:: {authorId} has been updated. The contract is :: {authorUpdateDto.Contract}");
 
-            return Ok(_mapper.Map<AuthorDto>(existingAuthor));
+            return Ok(existingAuthor);
         }
 
         [HttpOptions]
-        public IActionResult GetAuthorsOptions()
+        public ActionResult GetAuthorsOptions()
         {
             Response.Headers.Add("Allow", "GET, OPTIONS, POST, HEAD, DELETE");
             return Ok();

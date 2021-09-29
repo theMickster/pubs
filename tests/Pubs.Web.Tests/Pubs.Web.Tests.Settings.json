@@ -1,0 +1,64 @@
+{
+  "EntityFrameworkCoreSettings": {
+    "CommandLogLevel": "Warning",
+    "ComamndTimeout": "60"
+  },
+
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information",
+      "Microsoft.EntityFrameworkCore": "Debug"
+    },
+    "NLog": {
+      "IncludeScopes": true
+    }
+  },
+
+  "AllowedHosts": "*",
+
+  "NLog": {
+    "autoReload": true,
+    "throwConfigExceptions": true,
+    "extensions": [
+      { "assembly": "NLog.Web.AspNetCore" }
+    ],
+
+    "variables": {
+      "logFileDir": "C:\\Temp\\Pubs\\API\\Log",
+      "basicTextLayout": "${longdate}  ${level:upperCase=true}  ${logger}  ${message}",
+      "entityFrameworkLogTextLayout": "${longdate}  ${level:upperCase=true}  ${logger}${newline}${message}${newline}",
+      "standardTextLayout": "${longdate} | ${event-properties:item=EventId_Id} | ${level:upperCase=true} | ${logger} | ${message} | ${exception:format=tostring}",
+      "detailedTextLayout": "${longdate} ${level:upperCase=true}  ${logger}  ${callsite}${newline} Exception Type: ${exception:format=Type}${newline} Exception Message: ${exception:format=Message}${newline} Additional Info: ${message}${newline} Stack Trace: ${exception:format=StackTrace}${newline}"
+    },
+
+    "targets": {
+      "defaultNlogAllFile": {
+        "type": "File",
+        "fileName": "${logFileDir}\\nlog-all-${shortdate}.log",
+        "layout": "${standardTextLayout}"
+      },
+      "entityFrameworkCoreFile": {
+        "type": "File",
+        "fileName": "${logFileDir}\\nlog-ef-core-${shortdate}.log",
+        "layout": "${entityFrameworkLogTextLayout}"
+      }
+    },
+
+    "rules": [
+      {
+        "logger": "Microsoft.EntityFrameworkCore.*",
+        "writeTo": "entityFrameworkCoreFile",
+        "final": true
+      },
+      {
+        "logger": "*",
+        "minlevel": "Trace",
+        "writeTo": "defaultNlogAllFile",
+        "ruleName": "PubsDefaultLogRule"
+      }
+    ]
+
+  }
+}

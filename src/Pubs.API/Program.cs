@@ -1,12 +1,12 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using MsoftLoggingExt = Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging;
 using NLog;
 using NLog.Web;
-using Pubs.API.Extensions;
+using Pubs.Application.Infrastructure.Extensions;
 using System;
+using MsoftLoggingExt = Microsoft.Extensions.Logging;
 
 namespace Pubs.API
 {

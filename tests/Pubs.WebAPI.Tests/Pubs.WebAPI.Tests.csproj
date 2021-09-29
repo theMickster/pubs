@@ -4,15 +4,18 @@
     <TargetFramework>net5.0</TargetFramework>
 
     <IsPackable>false</IsPackable>
+
+    <UserSecretsId>f5a9bbc0-76c2-454d-ad0f-4782a50d507b</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ConfigurationSubstitutor" Version="1.1.1" />
+    <PackageReference Include="ConfigurationSubstitutor" Version="1.1.2" />
     <PackageReference Include="FluentAssertions" Version="6.1.0" />
     <PackageReference Include="ILogger.Moq" Version="1.1.9" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="5.0.10" />
     <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="5.0.10" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="5.0.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
     <PackageReference Include="Moq" Version="4.16.1" />
     <PackageReference Include="Shouldly" Version="4.0.3" />
@@ -30,6 +33,12 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\Pubs.API\Pubs.API.csproj" />
     <ProjectReference Include="..\Pubs.SharedKernel.Tests\Pubs.SharedKernel.Tests.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Pubs.WebAPI.Tests.Settings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

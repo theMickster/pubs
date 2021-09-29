@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace Pubs.API.Extensions
+namespace Pubs.Application.Infrastructure.Extensions
 {
     public static class HostingEnvironmentExtensions
     {
