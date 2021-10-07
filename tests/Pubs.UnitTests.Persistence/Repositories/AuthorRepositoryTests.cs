@@ -5,6 +5,7 @@ using Pubs.Infrastructure.Persistence.Repositories;
 using Pubs.SharedKernel.Tests.Constants;
 using Pubs.UnitTests.Persistence.Setup;
 using Pubs.UnitTests.Persistence.Setup.Fixtures;
+using System;
 using Xunit;
 
 namespace Pubs.UnitTests.Persistence.Repositories
@@ -134,5 +135,55 @@ namespace Pubs.UnitTests.Persistence.Repositories
             }
         }
 
+        [Fact]
+        public void is_author_code_in_use_throws_correct_exception()
+        {
+            using (new AssertionScope())
+            {
+                ((Action)(() => _repository.IsAuthorCodeInUse(null)))
+                    .Should().Throw<ArgumentException>()
+                    .And.ParamName.Should().Be("authorCode");
+
+                ((Action)(() => _repository.IsAuthorCodeInUse(string.Empty)))
+                        .Should().Throw<ArgumentException>()
+                        .And.ParamName.Should().Be("authorCode");
+
+                ((Action)(() => _repository.IsAuthorCodeInUse("       ")))
+                        .Should().Throw<ArgumentException>()
+                        .And.ParamName.Should().Be("authorCode");
+            }
+        }
+
+        [Fact]
+        public void is_author_code_in_use_succeeds()
+        {
+            _repository.IsAuthorCodeInUse("012-34-5678").Should().BeFalse();
+            _repository.IsAuthorCodeInUse("213-46-8915").Should().BeTrue();
+
+        }
+
+        [Fact]
+        public void is_author_valid_succeeds()
+        {
+            using (new AssertionScope())
+            {
+                _repository.IsAuthorValid(-10).Should().BeFalse();
+                _repository.IsAuthorValid(1000).Should().BeFalse();
+                _repository.IsAuthorValid(1).Should().BeTrue();
+                _repository.IsAuthorValid(2).Should().BeTrue();
+                _repository.IsAuthorValid(5).Should().BeTrue();
+
+            }
+        }
+
+        [Fact]
+        public void get_titles_for_invalid_author_succeeds()
+        {
+            _repository.GetTitlesForAuthorAsync(1000).Result.Should().BeNullOrEmpty();
+            _repository.GetTitlesForAuthorAsync(999).Result.Should().BeNullOrEmpty();
+            _repository.GetTitlesForAuthorAsync(2).Result.Should().NotBeNullOrEmpty();
+            _repository.GetTitlesForAuthorAsync(4).Result.Should().NotBeNullOrEmpty();
+
+        }
     }
 }

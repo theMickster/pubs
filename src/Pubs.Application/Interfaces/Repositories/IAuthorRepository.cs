@@ -26,5 +26,19 @@ namespace Pubs.Application.Interfaces.Repositories
         /// <param name="authorCode">the author code related to an author.</param>
         /// <returns><c>true</c>if the author code exists, otherwise <c>false</c>.</returns>
         bool IsAuthorCodeInUse(string authorCode);
+
+        /// <summary>
+        /// Determines if a given author id matches an author in the repository.
+        /// </summary>
+        /// <param name="authorId">the unique identifier for an author</param>
+        /// <returns><c>true</c>if the author id exists for an author, otherwise <c>false</c>.</returns>
+        bool IsAuthorValid(int authorId);
+
+        /// <summary>
+        /// Returns an author and all book titles that are associated with the author.
+        /// </summary>
+        /// <param name="authorId">the unique identifer for an author.</param>
+        /// <returns></returns>
+        Task<List<AuthorTitle>> GetTitlesForAuthorAsync(int authorId);
     }
 }

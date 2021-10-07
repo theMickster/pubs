@@ -4,9 +4,9 @@ using Pubs.CoreDomain.Entities;
 
 namespace Pubs.API.Profiles
 {
-    public class AuthorsProfile : Profile
+    public class AuthorProfile : Profile
     {
-        public AuthorsProfile()
+        public AuthorProfile()
         {
             CreateMap<Author, AuthorDto>()
                     .ForMember(

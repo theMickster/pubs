@@ -40,7 +40,7 @@ namespace Pubs.UnitTests.API.Controllers
             var mappingConfig = new MapperConfiguration(
                 m =>
                 {
-                    m.AddProfile(new AuthorsProfile());
+                    m.AddProfile(new AuthorProfile());
                 });
             _mapper = mappingConfig.CreateMapper();
 
