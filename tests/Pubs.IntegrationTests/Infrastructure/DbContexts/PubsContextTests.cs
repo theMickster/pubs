@@ -120,5 +120,10 @@ namespace Pubs.IntegrationTests.Infrastructure.DbContexts
 
         }
 
+        [Fact]
+        public void retrieving_author_titles_from_database_succeeds()
+        {
+            Context.AuthorTitles.Count(x => x.AuthorId == 4).Should().BeGreaterOrEqualTo(2);
+        }
     }
 }

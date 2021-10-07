@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using FluentAssertions;
 using FluentAssertions.Execution;
 using Pubs.CoreDomain.Entities;
@@ -28,7 +29,8 @@ namespace Pubs.UnitTests.Domain.Entities
                 TitleName = "Secrets of Silicon Valley",
                 Publisher = new Publisher { Id = 4 },
                 Royalties = new List<Royalty> { new Royalty { Id = 5 } },
-                Sales = new List<Sale> { new Sale { Id = 546 } }
+                Sales = new List<Sale> { new Sale { Id = 546 } },
+                AuthorTitles = new List<AuthorTitle>() { new AuthorTitle() { Id = 7} }
 
             };
 
@@ -51,6 +53,7 @@ namespace Pubs.UnitTests.Domain.Entities
                 sut.Royalties.Count.Should().Be(1);
                 sut.Sales.Should().NotBeNullOrEmpty();
                 sut.Sales.Count.Should().Be(1);
+                sut.AuthorTitles.FirstOrDefault(x => x.Id == 7).Should().NotBeNull();
             }
         }
     }

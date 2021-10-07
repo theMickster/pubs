@@ -1,4 +1,5 @@
 ﻿using Pubs.SharedKernel.Entities;
+using System.Collections.Generic;
 
 namespace Pubs.CoreDomain.Entities
 {
@@ -21,5 +22,8 @@ namespace Pubs.CoreDomain.Entities
         public string ZipCode { get; set; }
 
         public bool Contract { get; set; }
+
+        public ICollection<AuthorTitle> AuthorTitles { get; set; }
+
     }
 }

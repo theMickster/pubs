@@ -15,7 +15,7 @@ namespace Pubs.SharedKernel.Tests.Extensions.DbContext
             SetupJobs(dbContext);
             SetupPublishers(dbContext);
             SetupAuthors(dbContext);
-
+            SetupAuthorTitles(dbContext);
             dbContext.SaveChanges();
         }
 
@@ -112,6 +112,39 @@ namespace Pubs.SharedKernel.Tests.Extensions.DbContext
                 ,new Publisher{Id= 8,PublisherCode = "9999", PublisherName = "Lucerne Publishing", City = "Paris", Country = "France"}
             });
             dbContext.SaveChanges();
+        }
+
+        private static void SetupAuthorTitles(PubsContext dbContext)
+        {
+            dbContext.AuthorTitles.AddRange(new List<AuthorTitle>
+            {
+                new AuthorTitle() { Id = 1, AuthorId = 1, TitleId = 2, TitleCode = "BU1032", AuthorCode = "409-56-7008", AuthorOrder = 1,  Royalty = 60 },
+                new AuthorTitle() { Id = 2, AuthorId = 21, TitleId = 3, TitleCode = "PS7777", AuthorCode = "486-29-1786", AuthorOrder = 1,  Royalty = 100 },
+                new AuthorTitle() { Id = 3, AuthorId = 21, TitleId = 18, TitleCode = "PC9999", AuthorCode = "486-29-1786", AuthorOrder = 1,  Royalty = 100 },
+                new AuthorTitle() { Id = 4, AuthorId = 19, TitleId = 6, TitleCode = "MC2222", AuthorCode = "712-45-1867", AuthorOrder = 1,  Royalty = 100 },
+                new AuthorTitle() { Id = 5, AuthorId = 18, TitleId = 4, TitleCode = "PS3333", AuthorCode = "172-32-1176", AuthorOrder = 1,  Royalty = 100 },
+                new AuthorTitle() { Id = 6, AuthorId = 2, TitleId = 2, TitleCode = "BU1032", AuthorCode = "213-46-8915", AuthorOrder = 2,  Royalty = 40 },
+                new AuthorTitle() { Id = 7, AuthorId = 3, TitleId = 9, TitleCode = "PC1035", AuthorCode = "238-95-7766", AuthorOrder = 1,  Royalty = 100 },
+                new AuthorTitle() { Id = 8, AuthorId = 2, TitleId = 10, TitleCode = "BU2075", AuthorCode = "213-46-8915", AuthorOrder = 1,  Royalty = 100 },
+                new AuthorTitle() { Id = 9, AuthorId = 4, TitleId = 11, TitleCode = "PS2091", AuthorCode = "998-72-3567", AuthorOrder = 1,  Royalty = 50 },
+                new AuthorTitle() { Id = 10, AuthorId = 5, TitleId = 11, TitleCode = "PS2091", AuthorCode = "899-46-2035", AuthorOrder = 2,  Royalty = 50 },
+                new AuthorTitle() { Id = 11, AuthorId = 4, TitleId = 12, TitleCode = "PS2106", AuthorCode = "998-72-3567", AuthorOrder = 1,  Royalty = 100 },
+                new AuthorTitle() { Id = 12, AuthorId = 6, TitleId = 13, TitleCode = "MC3021", AuthorCode = "722-51-5454", AuthorOrder = 1,  Royalty = 75 },
+                new AuthorTitle() { Id = 13, AuthorId = 5, TitleId = 13, TitleCode = "MC3021", AuthorCode = "899-46-2035", AuthorOrder = 2,  Royalty = 25 },
+                new AuthorTitle() { Id = 14, AuthorId = 7, TitleId = 14, TitleCode = "TC3218", AuthorCode = "807-91-6654", AuthorOrder = 1,  Royalty = 100 },
+                new AuthorTitle() { Id = 15, AuthorId = 10, TitleId = 16, TitleCode = "BU7832", AuthorCode = "274-80-9391", AuthorOrder = 1,  Royalty = 100 },
+                new AuthorTitle() { Id = 16, AuthorId = 13, TitleId = 1, TitleCode = "PC8888", AuthorCode = "427-17-2319", AuthorOrder = 1,  Royalty = 50 },
+                new AuthorTitle() { Id = 17, AuthorId = 20, TitleId = 1, TitleCode = "PC8888", AuthorCode = "846-92-7186", AuthorOrder = 2,  Royalty = 50 },
+                new AuthorTitle() { Id = 18, AuthorId = 11, TitleId = 17, TitleCode = "PS1372", AuthorCode = "756-30-7391", AuthorOrder = 1,  Royalty = 75 },
+                new AuthorTitle() { Id = 19, AuthorId = 12, TitleId = 17, TitleCode = "PS1372", AuthorCode = "724-80-9391", AuthorOrder = 2,  Royalty = 25 },
+                new AuthorTitle() { Id = 20, AuthorId = 12, TitleId = 5, TitleCode = "BU1111", AuthorCode = "724-80-9391", AuthorOrder = 1,  Royalty = 60 },
+                new AuthorTitle() { Id = 21, AuthorId = 15, TitleId = 5, TitleCode = "BU1111", AuthorCode = "267-41-2394", AuthorOrder = 2,  Royalty = 40 },
+                new AuthorTitle() { Id = 22, AuthorId = 14, TitleId = 7, TitleCode = "TC7777", AuthorCode = "672-71-3249", AuthorOrder = 1,  Royalty = 40 },
+                new AuthorTitle() { Id = 23, AuthorId = 15, TitleId = 7, TitleCode = "TC7777", AuthorCode = "267-41-2394", AuthorOrder = 2,  Royalty = 30 },
+                new AuthorTitle() { Id = 24, AuthorId = 16, TitleId = 7, TitleCode = "TC7777", AuthorCode = "472-27-2349", AuthorOrder = 3,  Royalty = 30 },
+                new AuthorTitle() { Id = 25, AuthorId = 22, TitleId = 8, TitleCode = "TC4203", AuthorCode = "648-92-1872", AuthorOrder = 1,  Royalty = 100  }
+
+            });
         }
 
         #endregion Private Methods
