@@ -165,6 +165,23 @@ namespace Pubs.UnitTests.API.Controllers
             }
         }
 
+        [Fact]
+        public async Task get_titles_for_author_not_found_author_succeeds()
+        {
+            // Arrange 
+            _mockAuthorRepository.Setup(s => s.IsAuthorValid(It.IsAny<int>())).Returns(false);            
+            var sut = CreateAuthorTitlesController(_mockAuthorRepository, _mapper, _mockLogger);
+            
+            // Act
+            var result = await sut.GetTitlesForAuthor(1);
+            
+            // Assert 
+            result.Result.Should().BeOfType<NotFoundResult>();
+
+        }
+
+
+
         #region Private Methods
 
         private static AuthorTitlesController CreateAuthorTitlesController(
