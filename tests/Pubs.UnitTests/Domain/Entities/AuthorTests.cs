@@ -2,6 +2,8 @@
 using FluentAssertions.Execution;
 using Pubs.CoreDomain.Entities;
 using Pubs.UnitTests.Setup;
+using System.Collections.Generic;
+using System.Linq;
 using Xunit;
 
 namespace Pubs.UnitTests.Domain.Entities
@@ -22,7 +24,8 @@ namespace Pubs.UnitTests.Domain.Entities
                 State = "CO",
                 ZipCode = "80123",
                 PhoneNumber = "3038876688",
-                Contract = true
+                Contract = true,
+                AuthorTitles = new List<AuthorTitle>() { new AuthorTitle() { Id = 7 } }
             };
 
             using (new AssertionScope())
@@ -37,6 +40,7 @@ namespace Pubs.UnitTests.Domain.Entities
                 sut.ZipCode.Should().Be("80123");
                 sut.PhoneNumber.Should().Be("3038876688");
                 sut.Contract.Should().BeTrue();
+                sut.AuthorTitles.FirstOrDefault(x => x.Id == 7).Should().NotBeNull();
             }
         }
     }
