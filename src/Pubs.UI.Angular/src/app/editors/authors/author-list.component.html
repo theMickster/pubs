@@ -1,1 +1,24 @@
-<p>author-list works!</p>
+<p>author-list works well kinda</p>
+
+<div class="table-responsive">
+    <table class="table mb-0" *ngIf="authors && authors.length">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Author Code</th>
+                <th>Author Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let author of authors">
+                <td>
+                    <a [routerLink]="['/author', author.id]">
+                        {{ author.id }}
+                    </a>
+                </td>
+                <td>{{ author.authorCode }}</td>
+                <td>{{ author.name }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

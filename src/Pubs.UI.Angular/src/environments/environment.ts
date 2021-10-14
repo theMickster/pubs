@@ -6,8 +6,7 @@ export const environment = {
   production: false,
   environmentName: 'Development',
   appName: 'Pubs',
-  apiBaseUrl: 'http://localhost:4598',
-  pubsMicroserviceUrl: '/api/v1/'
+  apiBaseUrl: 'https://localhost:44386/api/'
 };
 
 
