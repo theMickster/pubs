@@ -8,6 +8,7 @@ import { AuthenticationModule } from './auth/authentication.module';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './oops/page-not-found.component';
 import { WelcomeComponent } from './home/welcome.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { WelcomeComponent } from './home/welcome.component';
     BrowserModule,
     HttpClientModule,
     AuthenticationModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

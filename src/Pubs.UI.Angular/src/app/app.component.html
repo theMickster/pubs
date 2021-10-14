@@ -14,32 +14,53 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ps-2" id="pubs-nav-main-menu" *ngIf="isLoggedIn">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">
+          <a  class="nav-link active" 
+              aria-current="page" 
+              [routerLink] = "['/editors']"
+              routerLinkActive = "active"
+              [routerLinkActiveOptions] = "{exact : true}">
             <i class="fas fa-feather-alt fa-lg me-2" id="pubs-sales-icon-editors"></i>
             <span>Editors</span>
           </a>
         </li>
         <li class="nav-item pe-2">
-          <a class="nav-link active" aria-current="page" href="#">
+          <a  class="nav-link active" 
+              aria-current="page" 
+              [routerLink] = "['/sales']"
+              routerLinkActive = "active"
+              [routerLinkActiveOptions] = "{exact : true}">
             <i class="fas fa-piggy-bank fa-lg me-2" id="pubs-sales-icon-sales"></i>
             <span>Sales</span>
           </a>
         </li>
         <li class="nav-item pe-2">
-          <a class="nav-link active" aria-current="page" href="#">
+          <a  class="nav-link active" 
+              aria-current="page" 
+              aria-current="page" 
+              [routerLink] = "['/hr']"
+              routerLinkActive = "active"
+              [routerLinkActiveOptions] = "{exact : true}">
             <i class="fas fa-users fa-lg me-2" id="pubs-sales-icon-human-resources"></i>
             <span>HR</span>
           </a>
         </li>
         <li class="nav-item pe-2">
-          <a class="nav-link active" aria-current="page" href="#">
+          <a  class="nav-link active" 
+              aria-current="page" 
+              [routerLink] = "['/reports']"
+              routerLinkActive = "active"
+              [routerLinkActiveOptions] = "{exact : true}">
             <i class="fas fa-chart-line fa-lg me-2" id="pubs-sales-icon-reports"></i>
             <span>Reports</span>
 
           </a>
         </li>
         <li class="nav-item pe-2">
-          <a class="nav-link active" aria-current="page" href="#">
+          <a  class="nav-link active" 
+              aria-current="page" 
+              [routerLink] = "['/admin']"
+              routerLinkActive = "active"
+              [routerLinkActiveOptions] = "{exact : true}">
             <i class="fas fa-cogs fa-lg me-2" id="pubs-sales-icon-admin"></i>
             <span>Admin</span>
 

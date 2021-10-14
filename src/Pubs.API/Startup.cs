@@ -1,4 +1,3 @@
-using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -6,10 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Pubs.API.Extensions;
-using Pubs.Application.DTOs;
 using Pubs.Application.Infrastructure.Extensions;
-using Pubs.Application.Validators.Base;
-using System;
 using System.Collections.Generic;
 
 namespace Pubs.API
@@ -20,9 +16,10 @@ namespace Pubs.API
         /// Initializes a new instance of the <see cref="Startup"/> class.
         /// </summary>
         /// <param name="configuration">The configuration.</param>
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IWebHostEnvironment webHostEnvironment)
         {
             Configuration = configuration;
+            CurrentEnvironment = webHostEnvironment;
         }
 
         /// <summary>
@@ -31,6 +28,7 @@ namespace Pubs.API
         /// <value>The configuration.</value>
         public IConfiguration Configuration { get; }
 
+        public IWebHostEnvironment CurrentEnvironment { get; }
 
         /// <summary>
         /// Configures the services.
@@ -43,7 +41,7 @@ namespace Pubs.API
         {
             //services.AddApplicationInsightsTelemetry(Configuration);
 
-            services.AddPubsConfig(Configuration);
+            services.AddPubsConfig(Configuration, CurrentEnvironment);
 
             services.AddPubsDbContext(Configuration);
 
