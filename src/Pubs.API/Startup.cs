@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Pubs.API.Extensions;
 using Pubs.Application.Infrastructure.Extensions;
+using System;
 using System.Collections.Generic;
 
 namespace Pubs.API
@@ -85,6 +86,22 @@ namespace Pubs.API
                 });
 
             }
+
+            var allowedOrigins = this.Configuration.GetValue("CORS:Origins", "*");
+            app.UseCors(builder =>
+            {
+                if (allowedOrigins == "*")
+                {
+                    builder.AllowAnyOrigin();
+                }
+                else
+                {
+                    builder.SetIsOriginAllowedToAllowWildcardSubdomains()
+                           .WithOrigins(allowedOrigins.Split(',', StringSplitOptions.RemoveEmptyEntries));
+                }
+                builder.AllowAnyMethod()
+                       .AllowAnyHeader();
+            });
 
             app.UseHttpsRedirection();
 

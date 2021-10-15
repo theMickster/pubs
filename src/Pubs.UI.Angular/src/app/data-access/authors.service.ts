@@ -11,9 +11,9 @@ import { AuthorViewDto } from '../data-structures/models/Dtos/AuthorViewDto';
 export class AuthorsService {
 
   private authorsUrl : string = "authors";
-  private theApiUrl = environment.apiBaseUrl + '/authors'
+  private theApiUrl = environment.apiBaseUrl + 'authors'
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
 
   }
 

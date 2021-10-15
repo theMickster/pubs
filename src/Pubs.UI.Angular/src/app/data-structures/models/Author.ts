@@ -1,6 +1,6 @@
 export class Author {
 
-    public id : number;
+    public authorId : number;
     public authorCode : string;
     public firstName : string;
     public lastName : string;
@@ -10,5 +10,5 @@ export class Author {
     public state : string;
     public zipCode : string;
     public isAuthorUnderContract : boolean;
-    
+
 }

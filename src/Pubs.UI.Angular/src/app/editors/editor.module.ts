@@ -8,7 +8,8 @@ import { EditorComponent } from './home/editor.component';
     EditorComponent
   ],
   imports: [
-    SharedModule
+    SharedModule,
+    RouterModule
   ]
 })
 export class EditorModule { }
