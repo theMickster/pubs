@@ -1,27 +1,40 @@
-<br />
-<br />
+<div class="card">
 
-<div class="table-responsive">
-  <table class="table mb-0" *ngIf="authors && authors.length">
-    <thead>
-      <tr>
-        <th>Id</th>
-        <th>Author Code</th>
-        <th>Author Name</th>
-        <th>Phone</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let author of authors">
-        <td>
-          <a [routerLink]="['/editors/author', author.authorId]">
-            {{ author.authorId }}
-          </a>
-        </td>
-        <td>{{ author.authorCode }}</td>
-        <td>{{ author.name }}</td>
-        <td>{{ author.phoneNumber }}</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="card-body">
+    <div class="table-responsive ">
+      <table class="table table-striped table-hover align-middle mb-0" *ngIf="authors && authors.length">
+        <thead>
+          <tr class="table-primary">
+            <th class="text-center">Author Code</th>
+            <th class="text-center">Author Name</th>
+            <th class="text-center">Phone</th>
+            <th class="text-center">Under Contract?</th>
+            <th class="text-center">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let author of authors">
+            <td class="text-center">
+              <a >
+                {{ author.authorCode }}
+              </a>
+            </td>
+            <td class="text-center">{{ author.name }}</td>
+            <td class="text-center">{{ author.phoneNumber }}</td>
+            <td class="text-center fw-bold" 
+                [ngClass]="{'text-success' : author.isAuthorUnderContract == true, 'text-danger' : author.isAuthorUnderContract == false }" >
+              {{ author.isAuthorUnderContract | yesNo }}
+            </td>
+            <td class="text-center">
+              <span>
+                <button class="btn btn-primary me-3" [routerLink]="['/editors/authors', author.authorId, 'details']">Details</button>
+                
+                <button class="btn btn-success" [routerLink]="['/editors/authors', author.authorId, 'edit']"> Edit  </button>
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
