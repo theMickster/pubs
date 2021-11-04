@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthorsService } from 'src/app/data-access/authors.service';
 import { IAuthorResolved } from 'src/app/data-structures/interfaces/IAuthorResolved';
 import { Author } from 'src/app/data-structures/models/Author';
 
@@ -10,15 +12,32 @@ import { Author } from 'src/app/data-structures/models/Author';
 })
 export class AuthorEditComponent implements OnInit {
   pageTitle = 'Author Edit';
-
-  author: Author;
   errorMessage: string;
+  authorEditForm : FormGroup;
 
   private dataIsValid: { [key: string]: boolean } = {};
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router) { }
+    private router: Router,
+    private formBuilder: FormBuilder,
+    private authorsService: AuthorsService) { 
+      this.instantiateAuthorForm();
+    }
+
+  private instantiateAuthorForm() {
+    this.authorEditForm = this.formBuilder.group({
+    id: [-999, Validators.required],
+    firstName: ["", Validators.required],
+    lastName: ["", Validators.required],
+    authorCode: [""],
+    address: ["", Validators.required],
+    city: ["", Validators.required],
+    zipCode: ["", Validators.required],
+    phoneNumber: ["", Validators.required],
+    contract: ["false"]
+  });
+  }
 
   ngOnInit(): void {
     const resolvedData: IAuthorResolved = this.route.snapshot.data['resolvedData'];
@@ -27,10 +46,9 @@ export class AuthorEditComponent implements OnInit {
   }
 
   onAuthorRetrieved(author: Author): void {
-    this.author = author;
-
-    if (this.author) {
-      this.pageTitle = `Author Detail: ${this.author.firstName} ${this.author.lastName}`;
+    if (author) {
+      this.pageTitle = `Author Detail: ${author.firstName} ${author.lastName}`;
+      this.authorEditForm.patchValue(author);
     } else {
       this.pageTitle = 'No author found';
     }
@@ -38,26 +56,18 @@ export class AuthorEditComponent implements OnInit {
 
   submitted = false;
 
-
-
   saveAuthor(): void {
     this.submitted = true;
-    // if (this.isValid()) {
-    //   if (this.product.id === 0) {
-    //     this.productService.createProduct(this.product).subscribe({
-    //       next: () => this.onSaveComplete(`The new ${this.product.productName} was saved`),
-    //       error: err => this.errorMessage = err
-    //     });
-    //   } else {
-    //     this.productService.updateProduct(this.product).subscribe({
-    //       next: () => this.onSaveComplete(`The updated ${this.product.productName} was saved`),
-    //       error: err => this.errorMessage = err
-    //     });
-    //   }
-    // } else {
-    //   this.errorMessage = 'Please correct the validation errors.';
-    // }
 
+    console.log(this.authorEditForm.value);
+
+    this.authorsService.updateAuthor(this.authorEditForm.value).subscribe(
+      data => {
+        console.log('Author Updated Succeeded')
+        this.router.navigate([`/editors/authors/${this.authorEditForm.controls['id'].value}`]);
+      },
+      error => {console.log('Author Updated Failed')}
+    )
   }
 
   isValid(path?: string): boolean {

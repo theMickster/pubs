@@ -399,7 +399,7 @@ namespace Pubs.UnitTests.API.Controllers
         public async Task update_author_mismatched_author_bad_request_succeeds()
         {
             var sut = CreateAuthorController(_mockAuthorRepository, _mapper, _mockLogger);
-            var result = await sut.UpdateAuthor(12, new AuthorUpdateDto() { AuthorId = 77 });
+            var result = await sut.UpdateAuthor(12, new AuthorUpdateDto() { Id = 77 });
 
             using (new AssertionScope())
             {
@@ -414,7 +414,7 @@ namespace Pubs.UnitTests.API.Controllers
 
             var sut = CreateAuthorController(_mockAuthorRepository, _mapper, _mockLogger);
 
-            var result = await sut.UpdateAuthor(787, new AuthorUpdateDto() { AuthorId = 787 });
+            var result = await sut.UpdateAuthor(787, new AuthorUpdateDto() { Id = 787 });
 
             using (new AssertionScope())
             {
@@ -427,7 +427,7 @@ namespace Pubs.UnitTests.API.Controllers
         {
             var author = new Author() { Id = 99, AuthorCode = "111-22-3333", FirstName = "A", LastName = "B", PhoneNumber = "1", Contract = false };
             var authorUpdated = new Author() { Id = 99, AuthorCode = "111-22-3333", FirstName = "Unit", LastName = "Test", PhoneNumber = "1", Contract = false };
-            var authorDto = new AuthorUpdateDto() { AuthorId = 99, FirstName = "Unit", LastName = "Test", PhoneNumber = "1" };
+            var authorDto = new AuthorUpdateDto() { Id = 99, FirstName = "Unit", LastName = "Test", PhoneNumber = "1" };
             _mockAuthorRepository.Setup(s => s.GetAuthorAsync(It.IsAny<int>())).ReturnsAsync(author);
             _mockAuthorRepository.Setup(s => s.UpdateAsync(It.IsAny<Author>()));
 

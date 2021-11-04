@@ -11,37 +11,50 @@ import { Author } from '../data-structures/models/Author';
 })
 export class AuthorsService {
 
-  private authorsUrl : string = "authors";
+  private authorsUrl: string = "authors";
   private theApiUrl = environment.apiBaseUrl + 'authors'
 
   constructor(private http: HttpClient) {
 
   }
 
-  public getAuthors() : Observable<AuthorViewDto[]>{
+  public getAuthors(): Observable<AuthorViewDto[]> {
     return this.http.get<AuthorViewDto[]>(
       this.theApiUrl
     )
-    .pipe(
-      retry(1),
-      catchError(this.handleError)
-    )
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
   }
 
   getAuthor(id: number): Observable<Author> {
     if (id === 0) {
       return of(this.initializeAuthor());
     }
-    
+
     const url = `${this.theApiUrl}/${id}`;
 
     return this.http.get<Author>(url)
       .pipe(
-        tap(data => console.log('getAuthor: ' + JSON.stringify(data))),
+        // tap(data => console.log('getAuthor: ' + JSON.stringify(data))),
         catchError(this.handleError)
       );
   }
 
+  updateAuthor(author: Author): Observable<Author> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+
+    const url = `${this.theApiUrl}/${author.id}`;
+
+    return this.http.put<Author>(url, author, { headers })
+      .pipe(
+        tap(() => console.log('updateAuthor: ' + JSON.stringify(author))),
+        // Return the product on an update
+        map(() => author),
+        catchError(this.handleError)
+      );
+  }
 
   private handleError(err: any): Observable<never> {
     // in a real world app, we may send the server to some remote logging infrastructure

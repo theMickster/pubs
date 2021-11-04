@@ -106,7 +106,7 @@ namespace Pubs.API.Controllers
                 return BadRequest();
             }
 
-            if (authorId != authorUpdate.AuthorId)
+            if (authorId != authorUpdate.Id)
             {
                 return BadRequest("The AuthorId parameter does not match the AuthorId in the request body.");
             }

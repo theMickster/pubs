@@ -9,7 +9,7 @@
                 <div class="row mt-3">
                     <div class="col-md-6">
                         <label for="txtFirstName" class="form-label">First Name</label>
-                        <input type="text" class="form-control" id="txtFirsttName" readonly
+                        <input type="text" class="form-control" id="txtFirstName" readonly
                             value={{author.firstName}} />
                     </div>
                     <div class="col-md-6">
@@ -77,10 +77,10 @@
 
             <div class="row mt-4">
                 <div class="col-md-12">
-                    <button class="btn btn-outline-primary me-3" style="width:80px" [routerLink]="['edit']">
+                    <button class="btn btn-outline-primary me-3" type="button" [routerLink]="['edit']">
                         Edit
                     </button>
-                    <button class="btn btn-outline-secondary me-3" style="width:80px" type="button"
+                    <button class="btn btn-outline-secondary me-3" type="button"
                         title="Cancel your edits" [routerLink]="['/editors/authors']">
                         Cancel
                     </button>
