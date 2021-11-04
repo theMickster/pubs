@@ -4,6 +4,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { AuthorDetailComponent } from './author-detail/author-detail.component';
 import { AuthorEditComponent } from './author-edit/author-edit.component';
 import { AuthorListComponent } from './author-list.component';
+import { AuthorResolver } from './author-resolver.service';
 
 @NgModule({
   imports: [
@@ -15,15 +16,18 @@ import { AuthorListComponent } from './author-list.component';
       },
       {
         path: ':id',
-        component: AuthorDetailComponent
+        component: AuthorDetailComponent,
+        resolve: {resolvedData : AuthorResolver}
       },
       {
         path: ':id/details',
-        component: AuthorDetailComponent
+        component: AuthorDetailComponent,
+        resolve: {resolvedData : AuthorResolver}
       },
       {
         path: ':id/edit',
-        component: AuthorEditComponent
+        component: AuthorEditComponent,
+        resolve: {resolvedData : AuthorResolver}
       }
     ])
   ],

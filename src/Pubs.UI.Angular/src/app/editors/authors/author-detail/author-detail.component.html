@@ -1,61 +1,93 @@
-<div class="container">
-    <form class="row g-3 mt-2">
-        <h1>Author Details</h1>
-
-        <section class="mt-3">
-            <h3>Demographics</h3>
-            <div class="row mt-3">
-                <div class="col-md-6">
-                    <label for="txtFirstName" class="form-label">First Name</label>
-                    <input type="text" class="form-control" id="txtFirsttName" />
+<div class="card mt-1">
+    <div class="card-header">
+        <h2> {{pageTitle}} </h2>
+    </div>
+    <div class="card-body" *ngIf="author">
+        <form class="row g-2 m-2">
+            <section>
+                <h3>Demographics</h3>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <label for="txtFirstName" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="txtFirsttName" readonly
+                            value={{author.firstName}} />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="txtLastName" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="txtLastName" readonly 
+                                value={{author.lastName}} />
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <label for="txtLastName" class="form-label">Last Name</label>
-                    <input type="text" class="form-control" id="txtLastName" />
+
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <label for="txtAuthorCode" class="form-label">Author Code</label>
+                        <input type="text" class="form-control" id="txtAuthorCode" readonly 
+                                value={{author.authorCode}}/>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mt-3">
+                <h3>Contact Info</h3>
+                <div class="row mt-3">
+                    <div class="col-12">
+                        <label for="txtAddress" class="form-label">Address</label>
+                        <input type="text" class="form-control" id="txtAddress" readonly 
+                                value={{author.address}} />
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <label for="txtCity" class="form-label">City</label>
+                        <input type="text" class="form-control" id="txtCity" readonly 
+                                value={{author.city}} />
+                    </div>
+                    <div class="col-md-4">
+                        <label for="txtState" class="form-label">State</label>
+                        <input type="text" class="form-control" id="txtState" readonly 
+                                value={{author.state}} />
+                    </div>
+                    <div class="col-md-2">
+                        <label for="txtZip" class="form-label">Zip</label>
+                        <input type="text" class="form-control" id="txtZip" readonly 
+                                value={{author.zipCode}} />
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <label for="txtPhone" class="form-label">Phone</label>
+                        <input type="text" class="form-control" id="txtPhone" readonly 
+                                value={{author.phoneNumber}} />
+                    </div>
+                </div>
+            </section>
+
+            <section class="mt-3">
+                <h3>Contract</h3>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <label for="txtIsUnderContract" class="form-label">Is Under Contract?</label>
+                        <input type="text" class="form-control" id="txtIsUnderContract" readonly 
+                                [ngModel] = "author.contract | yesNo" 
+                                [ngModelOptions]="{standalone: true}" />
+                    </div>
+                </div>
+            </section>
+
+            <div class="row mt-4">
+                <div class="col-md-12">
+                    <button class="btn btn-outline-primary me-3" style="width:80px" [routerLink]="['edit']">
+                        Edit
+                    </button>
+                    <button class="btn btn-outline-secondary me-3" style="width:80px" type="button"
+                        title="Cancel your edits" [routerLink]="['/editors/authors']">
+                        Cancel
+                    </button>
+
                 </div>
             </div>
-            
-            <div class="row mt-3">
-                <div class="col-md-6">
-                    <label for="txtAuthorCode" class="form-label">Author Code</label>
-                    <input type="text" class="form-control" id="txtAuthorCode" />
-                </div>
-            </div>
-        </section>
 
-        <section class="mt-3">
-            <h3>Contact Info</h3>
-            <div class="row mt-3">
-                <div class="col-12">
-                    <label for="txtAddress" class="form-label">Address</label>
-                    <input type="text" class="form-control" id="txtAddress" >
-                </div>
-            </div>
-            <div class="row mt-3">
-                <div class="col-md-6">
-                    <label for="txtCity" class="form-label">City</label>
-                    <input type="text" class="form-control" id="txtCity">
-                  </div>
-                  <div class="col-md-4">
-                    <label for="txtState" class="form-label">State</label>
-                    <select id="txtState" class="form-select">
-                      <option selected>Choose...</option>
-                      <option>...</option>
-                    </select>
-                  </div>
-                  <div class="col-md-2">
-                    <label for="txtZip" class="form-label">Zip</label>
-                    <input type="text" class="form-control" id="txtZip">
-                  </div>                
-            </div>
-        </section>
-
-        <section class="mt-3">
-            <h3>Contract</h3>
-
-        </section>
-
-        
-        
-    </form>
+        </form>
+    </div>
 </div>

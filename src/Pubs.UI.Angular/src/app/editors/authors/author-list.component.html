@@ -22,14 +22,14 @@
             <td class="text-center">{{ author.name }}</td>
             <td class="text-center">{{ author.phoneNumber }}</td>
             <td class="text-center fw-bold" 
-                [ngClass]="{'text-success' : author.isAuthorUnderContract == true, 'text-danger' : author.isAuthorUnderContract == false }" >
-              {{ author.isAuthorUnderContract | yesNo }}
+                [ngClass]="{'text-success' : author.contract== true, 'text-danger' : author.contract == false }" >
+              {{ author.contract | yesNo }}
             </td>
             <td class="text-center">
               <span>
-                <button class="btn btn-primary me-3" [routerLink]="['/editors/authors', author.authorId, 'details']">Details</button>
+                <button class="btn btn-primary me-3" [routerLink]="['/editors/authors', author.id]">Details</button>
                 
-                <button class="btn btn-success" [routerLink]="['/editors/authors', author.authorId, 'edit']"> Edit  </button>
+                <button class="btn btn-success" [routerLink]="['/editors/authors', author.id, 'edit']"> Edit  </button>
               </span>
             </td>
           </tr>

@@ -13,7 +13,7 @@ export class AuthorListComponent implements OnInit {
   errorMessage = '';
   filteredAuthors: AuthorViewDto[] = [];
   authors: AuthorViewDto[] = [];
-  columnsToDisplay: string[] = ['authorId', 'authorCode', 'name', 'phoneNumber', 'isAuthorUnderContract'];
+  columnsToDisplay: string[] = ['authorId', 'authorCode', 'name', 'phoneNumber', 'contract'];
 
   constructor(
     private authorsService: AuthorsService,

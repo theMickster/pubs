@@ -1,1 +1,95 @@
-<p>author-edit works!</p>
+<div class="card mt-1">
+    <div class="card-header">
+        <h2> {{pageTitle}} </h2>
+    </div>
+    <div class="card-body" *ngIf="author">
+        <form class="row g-2 m-2" (ngSubmit)="saveAuthor()" #authorForm="ngForm">
+            <section>
+                <h3>Demographics</h3>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <label for="txtFirstName" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="txtFirsttName" [(ngModel)]="author.firstName"
+                            name="firstName" #firstName="ngModel" />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="txtLastName" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="txtLastName" [(ngModel)]="author.lastName"
+                            name="lastName" #lastName="ngModel" />
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <label for="txtAuthorCode" class="form-label">Author Code</label>
+                        <input type="text" class="form-control" id="txtAuthorCode" [(ngModel)]="author.authorCode"
+                                name="authorCode" #authorCode="ngModel" readonly />
+                    </div>
+                </div>
+            </section>
+
+            <section class="mt-3">
+                <h3>Contact Info</h3>
+                <div class="row mt-3">
+                    <div class="col-12">
+                        <label for="txtAddress" class="form-label">Address</label>
+                        <input type="text" class="form-control" id="txtAddress" [(ngModel)]="author.address"
+                        name="address" #address="ngModel" >
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <label for="txtCity" class="form-label">City</label>
+                        <input type="text" class="form-control" id="txtCity" [(ngModel)]="author.city"
+                        name="city" #city="ngModel" >
+                    </div>
+                    <div class="col-md-4">
+                        <label for="selectState" class="form-label">State</label>
+                        <select id="selectState" class="form-select">
+                            <option selected>Choose...</option>
+                            <option>...</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label for="txtZip" class="form-label">Zip</label>
+                        <input type="text" class="form-control" id="txtZip" [(ngModel)]="author.zipCode"
+                        name="zipCode" #zipCode="ngModel" >
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <label for="txtPhone" class="form-label">Phone</label>
+                        <input type="text" class="form-control" id="txtPhone" [(ngModel)]="author.phoneNumber"
+                        name="phoneNumber" #phoneNumber="ngModel">
+                    </div>
+                </div>
+            </section>
+
+            <section class="mt-3">
+                <h3>Contract</h3>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <label for="selectIsUnderContract" class="form-label">Is Under Contract?</label>
+                        <input type="text" class="form-control" id="txtIsUnderContract" readonly 
+                                [ngModel] = "author.contract | yesNo" 
+                                [ngModelOptions]="{standalone: true}" />
+                    </div>
+                </div>
+            </section>
+
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <button class="btn btn-outline-primary me-3" style="width:80px" type="button"
+                        title="Save your entered data" [disabled]="!isValid()" (click)="saveAuthor()">
+                        Save
+                    </button>
+                    <button class="btn btn-outline-secondary me-3" style="width:80px" type="button"
+                        title="Cancel your edits" [routerLink]="['/editors/authors']">
+                        Cancel
+                    </button>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

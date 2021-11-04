@@ -12,7 +12,7 @@ namespace Pubs.UnitTests.Application.DTOs
         {
             var sut = new AuthorDto()
             {
-                AuthorId = 1,
+                Id = 1,
                 AuthorCode = "ABC",
                 Name = "Unit Tests",
                 PhoneNumber = "303-333-4455",
@@ -20,12 +20,12 @@ namespace Pubs.UnitTests.Application.DTOs
                 City = "Denver",
                 State = "CO",
                 ZipCode = "80018",
-                IsAuthorUnderContract = true
+                Contract = true
             };
 
             using (new AssertionScope())
             {
-                sut.AuthorId.Should().Be(1);
+                sut.Id.Should().Be(1);
                 sut.Name.Should().Be("Unit Tests");
                 sut.AuthorCode.Should().Be("ABC");
                 sut.PhoneNumber.Should().Be("303-333-4455");
@@ -33,7 +33,7 @@ namespace Pubs.UnitTests.Application.DTOs
                 sut.City.Should().Be("Denver");
                 sut.State.Should().Be("CO");
                 sut.ZipCode.Should().Be("80018");
-                sut.IsAuthorUnderContract.Should().BeTrue();
+                sut.Contract.Should().BeTrue();
             }
         }
     }
