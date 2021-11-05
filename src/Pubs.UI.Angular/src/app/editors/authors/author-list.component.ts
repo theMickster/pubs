@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AuthorsService } from 'src/app/data-access/authors.service';
 import { AuthorViewDto } from 'src/app/data-structures/models/Dtos/AuthorViewDto';
-import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 
 @Component({
   selector: 'app-author-list',
@@ -14,8 +13,7 @@ export class AuthorListComponent implements OnInit {
   errorMessage = '';
   filteredAuthors: AuthorViewDto[] = [];
   authors: AuthorViewDto[] = [];
-  dataSource: MatTableDataSource<AuthorViewDto>;
-  columnsToDisplay: string[] = ['authorId', 'authorCode', 'name', 'phoneNumber', 'isAuthorUnderContract'];
+  columnsToDisplay: string[] = ['authorId', 'authorCode', 'name', 'phoneNumber', 'contract'];
 
   constructor(
     private authorsService: AuthorsService,
@@ -30,8 +28,6 @@ export class AuthorListComponent implements OnInit {
       },
       error: err => this.errorMessage = err
     });
-
-    this.dataSource = new MatTableDataSource(this.authors);
 
   }
 

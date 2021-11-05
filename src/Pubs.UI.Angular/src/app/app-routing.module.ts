@@ -32,31 +32,9 @@ const routes: Routes = [
     path: 'editors',
     canLoad: [AuthGuard],
     canActivate: [AuthGuard],
-    component: EditorComponent    
-  },
-  {
-    path: 'editors/authors',
-    canLoad: [AuthGuard],
-    data: { preload: true},
     loadChildren : () =>        
-      import('./editors/authors/author.module')
-        .then(m => m.AuthorModule)        
-  },  
-  {
-    path: 'editors/publishers',
-    canLoad: [AuthGuard],
-    data: { preload: true},
-    loadChildren : () =>        
-      import('./editors/publishers/publisher.module')
-        .then(m => m.PublisherModule)        
-  }, 
-  {
-    path: 'editors/titles',
-    canLoad: [AuthGuard],
-    data: { preload: true},
-    loadChildren : () =>        
-      import('./editors/titles/title.module')
-        .then(m => m.TitleModule)        
+          import('./editors/editor.module')
+            .then(m => m.EditorModule)  
   },
   {
     path: 'sales',
@@ -87,7 +65,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes /*, {enableTracing: true}*/)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
