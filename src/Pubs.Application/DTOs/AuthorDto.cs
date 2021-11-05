@@ -2,7 +2,7 @@
 {
     public class AuthorDto
     {
-        public int AuthorId { get; set; }
+        public int Id { get; set; }
 
         public string AuthorCode { get; set; }
 
@@ -18,7 +18,7 @@
 
         public string ZipCode { get; set; }
 
-        public bool IsAuthorUnderContract { get; set; }
+        public bool Contract { get; set; }
 
     }
 }

@@ -33,5 +33,7 @@ namespace Pubs.CoreDomain.Entities
         public ICollection<Sale> Sales { get; set; }
 
         public Publisher Publisher { get; set; }
+
+        public ICollection<AuthorTitle> AuthorTitles { get; set; }
     }
 }

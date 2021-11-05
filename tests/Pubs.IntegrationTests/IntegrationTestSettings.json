@@ -1,7 +1,14 @@
 ﻿{
+  "EntityFrameworkCoreSettings": {
+    "CommandLogLevel": "Warning",
+    "ComamndTimeout": "60",
+    "CurrentConnectionStringName": "SqlAzureConnection"
+  },
+
   "ConnectionStrings": {
     "DefaultConnection": "",
     "SqlAzureConnection": ""
   },
-  "DefaultSchema":  "dbo"
+
+  "DefaultSchema": "dbo"
 }

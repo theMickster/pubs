@@ -10,7 +10,7 @@
 .navbar-nav .nav-item.active .nav-link,
 .navbar-nav .nav-item:hover .nav-link {
     font-weight: bold;
-    font-size: 1.1rem;
+    /* font-size: 1.1rem; */
 }
 
 .pubs-nav-bar ul li {

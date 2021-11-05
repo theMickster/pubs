@@ -37,5 +37,6 @@ namespace Pubs.Application.Interfaces.DbContexts
 
         DbSet<ApplicationUserRole> ApplicationUserRoles { get; set; }
 
+        DbSet<AuthorTitle> AuthorTitles { get; set; }
     }
 }

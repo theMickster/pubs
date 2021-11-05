@@ -12,7 +12,7 @@ namespace Pubs.UnitTests.Application.DTOs
         {
             var sut = new AuthorUpdateDto()
             {
-                AuthorId = 7, 
+                Id = 7, 
                 FirstName = "Unit",
                 LastName = "Test",
                 PhoneNumber = "303-333-4455",
@@ -26,7 +26,7 @@ namespace Pubs.UnitTests.Application.DTOs
             {
                 sut.FirstName.Should().Be("Unit");
                 sut.LastName.Should().Be("Test");
-                sut.AuthorId.Should().Be(7);
+                sut.Id.Should().Be(7);
                 sut.PhoneNumber.Should().Be("303-333-4455");
                 sut.Address.Should().Be("12345 Unit Test");
                 sut.City.Should().Be("Denver");

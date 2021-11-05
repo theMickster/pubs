@@ -1,0 +1,87 @@
+<div class="p-3 mb-4 mt-1 bg-white rounded-3">
+    <div class="container-fluid ">
+        <img src="../../assets/images/pubs_editor.jpg" class="rounded mx-auto d-block" alt="editor"
+            style="max-height: 400px" />
+        <h2 class="fw-bold">Welcome to our Pubslishers Portal</h2>
+        <p class="ms-4 col-md-8 fs-4">Based upon Microsoft's old-school pubs database, our Pubslishers Portal brings the
+            classic SQL database model to the next generation of developers. </p>
+    </div>
+</div>
+
+<div class="container mt-1">
+    <div class="row ms-1">
+
+        <!-- Editors Card -->
+        <div class="card me-3 mb-2" style="width: 15rem;">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <span class="text-primary" href="#" id="pubs-home-editors-card-title">
+                        <i class="fas fa-feather-alt fa-lg me-3" id="pubs-home-editors-card-icon"></i>
+                        <span>Editors</span>
+                    </span>
+                </h5>
+                <p class="card-text">Enter the editors module to perform tasks like adding or editing authors and
+                    titles. </p>
+                <a [routerLink]="['/editors']" class="stretched-link"></a>
+            </div>
+        </div>
+
+        <!-- Sales Card -->
+        <div class="card me-3 mb-2" style="width: 15rem;">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <span class="text-primary" href="#" id="pubs-home-sales-card-title">
+                        <i class="fas fa-piggy-bank fa-lg me-2" id="pubs-home-sales-card-icon"></i>
+                        <span>Sales</span>
+                    </span>
+                </h5>
+                <p class="card-text">Enter the sales module to perform tasks like adding or editing book sale prices and
+                    recoding book sales. </p>
+                <a [routerLink]="['/sales']"  class="stretched-link"></a>
+            </div>
+        </div>
+
+        <!-- HR Card -->
+        <div class="card me-3 mb-2" style="width: 15rem;">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <span class="text-primary" href="#" id="pubs-home-sales-card-title">
+                        <i class="fas fa-users fa-lg me-2" id="pubs-home-sales-card-icon"></i>
+                        <span>HR</span>
+                    </span>
+                </h5>
+                <p class="card-text">Enter the HR module to perform tasks like adding or editing salespeople</p>
+                <a [routerLink]="['/hr']"  class="stretched-link"></a>
+            </div>
+        </div>
+
+        <!-- Reports Card -->
+        <div class="card me-3 mb-2" style="width: 15rem;">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <span class="text-primary" href="#" id="pubs-home-sales-card-title">
+                        <i class="fas fa-chart-line fa-lg me-2" id="pubs-home-sales-card-icon"></i>
+                        <span>Reports</span>
+                    </span>
+                </h5>
+                <p class="card-text">Enter the reports module to perform data mining across the enterprise.</p>
+                <a [routerLink]="['/reports']"  class="stretched-link"></a>
+            </div>
+        </div>
+
+        <!-- Admin Card -->
+        <div class="card me-3 mb-2" style="width: 15rem;">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <span class="text-primary" href="#" id="pubs-home-sales-card-title">
+                        <i class="fas fa-cogs fa-lg me-2" id="pubs-home-sales-card-icon"></i>
+                        <span>Admin</span>
+                    </span>
+                </h5>
+                <p class="card-text">Enter the admin module to perform tasks like adding, editing, or deactiving users. </p>
+                <a [routerLink]="['/admin']" class="stretched-link"></a>
+            </div>
+        </div>
+
+    </div>
+</div>

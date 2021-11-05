@@ -1,4 +1,6 @@
-﻿namespace Pubs.CoreDomain.Settings
+﻿using System.Collections.Generic;
+
+namespace Pubs.CoreDomain.Settings
 {
     public class EntityFrameworkCoreSettings
     {
@@ -8,5 +10,8 @@
 
         public int ComamndTimeout { get; set; }
 
+        public string CurrentConnectionStringName { get; set; }
+
+        public List<DatabaseConnectionString> DatabaseConnectionStrings { get; set; }
     }
 }
