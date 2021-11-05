@@ -30,7 +30,7 @@ export class AuthorDetailComponent implements OnInit {
     this.author = author;
 
     if (this.author) {
-      this.pageTitle = `Author Edit: ${this.author.firstName} ${this.author.lastName}`;
+      this.pageTitle = `Author Detail: ${this.author.firstName} ${this.author.lastName}`;
     } else {
       this.pageTitle = 'No author found';
     }
