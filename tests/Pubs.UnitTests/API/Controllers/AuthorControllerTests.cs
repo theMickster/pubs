@@ -40,7 +40,7 @@ namespace Pubs.UnitTests.API.Controllers
             var mappingConfig = new MapperConfiguration(
                 m =>
                 {
-                    m.AddProfile(new AuthorProfile());
+                    m.AddProfile(new AuthorsProfile());
                 });
             _mapper = mappingConfig.CreateMapper();
 
@@ -290,9 +290,9 @@ namespace Pubs.UnitTests.API.Controllers
             {
                 result.Should().BeOfType<ActionResult<List<AuthorDto>>>();
                 authorList.Count.Should().Be(2);
-                authorList.Count(x => x.Id == 1).Should().Be(1);
-                authorList.Count(x => x.Id == 2).Should().Be(1);
-                authorList.Count(x => x.Id == 7).Should().Be(0);
+                authorList.Count(x => x.AuthorId == 1).Should().Be(1);
+                authorList.Count(x => x.AuthorId == 2).Should().Be(1);
+                authorList.Count(x => x.AuthorId == 7).Should().Be(0);
             }
         }
 

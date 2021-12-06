@@ -3,8 +3,8 @@ import { environment } from '../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { catchError, tap, map, retry } from 'rxjs/operators';
-import { AuthorViewDto } from '../data-structures/models/Dtos/AuthorViewDto';
 import { Author } from '../data-structures/models/Author';
+import { AuthorViewModel } from '../data-structures/viewModels/authorViewModel';
 
 @Injectable({
   providedIn: 'root'
@@ -12,28 +12,23 @@ import { Author } from '../data-structures/models/Author';
 export class AuthorsService {
 
   private authorsUrl: string = "authors";
-  private theApiUrl = environment.apiBaseUrl + 'authors'
+  private authorsBaseUrl = environment.apiBaseUrl + this.authorsUrl;
 
   constructor(private http: HttpClient) {
 
   }
 
-  public getAuthors(): Observable<AuthorViewDto[]> {
-    return this.http.get<AuthorViewDto[]>(
-      this.theApiUrl
-    )
-      .pipe(
-        retry(1),
-        catchError(this.handleError)
-      )
-  }
+  authors$ = this.http.get<AuthorViewModel[]>(this.authorsBaseUrl).pipe(
+    tap((data) => console.log('AuthorViewModel: ', JSON.stringify(data))),    
+    catchError(this.handleError)
+  )
 
   getAuthor(id: number): Observable<Author> {
     if (id === 0) {
       return of(this.initializeAuthor());
     }
 
-    const url = `${this.theApiUrl}/${id}`;
+    const url = `${this.authorsBaseUrl}/${id}`;
 
     return this.http.get<Author>(url)
       .pipe(
@@ -45,7 +40,7 @@ export class AuthorsService {
   updateAuthor(author: Author): Observable<Author> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
-    const url = `${this.theApiUrl}/${author.id}`;
+    const url = `${this.authorsBaseUrl}/${author.id}`;
 
     return this.http.put<Author>(url, author, { headers })
       .pipe(

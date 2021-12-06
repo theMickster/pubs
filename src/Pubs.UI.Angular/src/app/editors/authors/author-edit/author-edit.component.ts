@@ -47,7 +47,7 @@ export class AuthorEditComponent implements OnInit {
 
   onAuthorRetrieved(author: Author): void {
     if (author) {
-      this.pageTitle = `Author Detail: ${author.firstName} ${author.lastName}`;
+      this.pageTitle = `Author Edit: ${author.firstName} ${author.lastName}`;
       this.authorEditForm.patchValue(author);
     } else {
       this.pageTitle = 'No author found';
