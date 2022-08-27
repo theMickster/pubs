@@ -1,0 +1,24 @@
+/*************************************************************************
+  Import Color Customizations
+*************************************************************************/
+@import './styles/_custom-colors';
+@import './styles/_custom-gradients';
+
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~bootstrap/scss/bootstrap.scss';
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #3c4b64;
+    text-align: left;
+    background-color: #ebedef;
+  }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

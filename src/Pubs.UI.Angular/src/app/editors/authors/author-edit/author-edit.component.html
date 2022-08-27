@@ -1,31 +1,35 @@
 <div class="card mt-1">
-    <div class="card-header">
-        <h2> {{pageTitle}} </h2>
+
+    <div class="card-header text-white bg-linkedin fs-5" role="heading" aria-level="1">
+        <i class="fas fa-user fa-lg me-2"></i><span>{{pageTitle}}</span>
     </div>
-    <!-- Reactive Form -->
 
     <div class="card-body">
         <form class="row g-2 m-2" [formGroup]="authorEditForm" (ngSubmit)="saveAuthor()">
 
-            <input type="hidden" class="form-control" id="txtAuthorId" formControlName="id" name="id" [attr.hidden]="true" />
+            <input type="hidden" class="form-control" id="txtAuthorId" formControlName="id" name="id"
+                [attr.hidden]="true" />
 
             <section>
                 <h3>Demographics</h3>
                 <div class="row mt-3">
                     <div class="col-md-6">
                         <label for="txtFirstName" class="form-label">First Name</label>
-                        <input type="text" class="form-control" id="txtFirstName" formControlName="firstName" name="firstName" />
+                        <input type="text" class="form-control" id="txtFirstName" formControlName="firstName"
+                            name="firstName" />
                     </div>
 
                     <div class="col-md-6">
-                        <label for="txtLastName" class="form-label">Last Name</label>                        
-                        <input type="text" class="form-control" id="txtLastName" formControlName="lastName" name="lastName" />
+                        <label for="txtLastName" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="txtLastName" formControlName="lastName"
+                            name="lastName" />
                     </div>
                 </div>
                 <div class="row mt-3">
                     <div class="col-md-6">
                         <label for="txtAuthorCode" class="form-label">Author Code</label>
-                        <input type="text" class="form-control" id="txtAuthorCode" formControlName="authorCode" name="authorCode" readonly />
+                        <input type="text" class="form-control" id="txtAuthorCode" formControlName="authorCode"
+                            name="authorCode" readonly />
                     </div>
                 </div>
             </section>
@@ -35,13 +39,14 @@
                 <div class="row mt-3">
                     <div class="col-12">
                         <label for="txtAddress" class="form-label">Address</label>
-                        <input type="text" class="form-control" id="txtAddress" formControlName="address" name="address" >
+                        <input type="text" class="form-control" id="txtAddress" formControlName="address"
+                            name="address">
                     </div>
                 </div>
                 <div class="row mt-3">
                     <div class="col-md-6">
                         <label for="txtCity" class="form-label">City</label>
-                        <input type="text" class="form-control" id="txtCity" formControlName="city" name="city" >
+                        <input type="text" class="form-control" id="txtCity" formControlName="city" name="city">
                     </div>
                     <div class="col-md-4">
                         <label for="selectState" class="form-label">State</label>
@@ -52,13 +57,14 @@
                     </div>
                     <div class="col-md-2">
                         <label for="txtZip" class="form-label">Zip</label>
-                        <input type="text" class="form-control" id="txtZip" formControlName="zipCode" name="zipCode" >
+                        <input type="text" class="form-control" id="txtZip" formControlName="zipCode" name="zipCode">
                     </div>
                 </div>
                 <div class="row mt-3">
                     <div class="col-md-6">
                         <label for="txtPhone" class="form-label">Phone</label>
-                        <input type="text" class="form-control" id="txtPhone" formControlName="phoneNumber" name="phoneNumber">
+                        <input type="text" class="form-control" id="txtPhone" formControlName="phoneNumber"
+                            name="phoneNumber">
                     </div>
                 </div>
             </section>
@@ -68,23 +74,24 @@
                 <div class="row mt-3">
                     <div class="col-md-6">
                         <label for="selectIsUnderContract" class="form-label">Is Under Contract?</label>
-                        <select id="selectIsUnderContract" class="form-select" readonly formControlName="contract" name="contract" [attr.disabled]="true" >
+                        <select id="selectIsUnderContract" class="form-select" readonly formControlName="contract"
+                            name="contract" [attr.disabled]="true">
                             <option value='true'>Yes</option>
-                            <option value='false'>No</option>                            
+                            <option value='false'>No</option>
                         </select>
                     </div>
                 </div>
-            </section>            
+            </section>
 
             <div class="row mt-4">
                 <div class="col-md-4">
-                    <button class="btn btn-outline-primary me-3" type="button"
-                        title="Save your entered data" [disabled]="!isValid()" (click)="saveAuthor()">
+                    <button class="btn btn-outline-primary me-3" type="button" title="Save your entered data"
+                        [disabled]="!isValid()" (click)="saveAuthor()">
                         Save
                     </button>
 
-                    <button class="btn btn-outline-secondary me-3" type="button"
-                        title="Cancel your edits" [routerLink]="['/editors/authors']">
+                    <button class="btn btn-outline-secondary me-3" type="button" title="Cancel your edits"
+                        [routerLink]="['/editors/authors']">
                         Cancel
                     </button>
 
