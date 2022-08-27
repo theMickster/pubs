@@ -9,8 +9,8 @@
     "pubs": {
       "projectType": "application",
       "schematics": {
-        "@schematics/angular:application": {
-          "strict": true
+        "@schematics/angular:component": {
+          "style": "scss"
         }
       },
       "root": "",
@@ -30,11 +30,11 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ]
           },
           "configurations": {
@@ -100,9 +100,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+
+            ]
           }
         }
       }

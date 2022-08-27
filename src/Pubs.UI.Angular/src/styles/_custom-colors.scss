@@ -1,0 +1,156 @@
+/***************************************************************************
+CREATED BY:   Mick Letofsky
+CREATION:     SASS & CSS Color Customizations
+***************************************************************************/
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+
+$white: #fff !default;
+$black: #000015 !default;
+
+$primary-base: #495c7d !default;
+$primary-dark: #21304d !default;
+$primary: #495c7d !default;
+$primary-50: #808da4 !default;
+$primary-25: #c8ced8 !default;
+
+$secondary-base: #790000 !default;
+$secondary-dark: #490000 !default;
+$secondary: #790000 !default;
+$secondary-50: #8d2626 !default;
+$secondary-25: #d7b3b3 !default;
+
+$danger-dark: #8b0505 !default;
+$danger: #b31212 !default;
+$danger-50: #e8b8b8 !default;
+$danger-25: #f6e3e3 !default;
+
+$info-dark: #1343d8 !default;
+$info: #3073e8 !default;
+$info-50: #6e9def !default;
+$info-25: #c1d5f8 !default;
+
+$success-dark: #058b34 !default;
+$success: #12b362 !default;
+$success-50: #59ca91 !default;
+$success-25: #b8e8d0 !default;
+
+$warning-dark: #bf6413 !default;
+$warning: #d89331 !default;
+$warning-50: #e4b36f !default;
+$warning-25: #f3dfc1 !default;
+
+$input-focus-border-color: #a4aebe;
+
+$blue: #3073e8 !default;
+$red: #b31212 !default;
+$yellow: #f6ae2d !default;
+$green: #12b362 !default;
+
+$facebook: #3b5998 !default;
+$twitter: #00aced !default;
+$linkedin: #4875b4 !default;
+$flickr: #ff0084 !default;
+$tumblr: #32506d !default;
+$xing: #026466 !default;
+$github: #4183c4 !default;
+$stack-overflow: #fe7a15 !default;
+$youtube: #b00 !default;
+$dribbble: #ea4c89 !default;
+$instagram: #517fa4 !default;
+$pinterest: #cb2027 !default;
+$vk: #45668e !default;
+$yahoo: #400191 !default;
+$behance: #1769ff !default;
+$reddit: #ff4500 !default;
+$vimeo: #aad450 !default;
+$dark-pink: #c3338f !default;
+
+$our-custom-theme-colors: (
+  'facebook': $facebook,
+  'twitter': $twitter,
+  'linkedin': $linkedin,
+  'flickr': $flickr,
+  'tumblr': $tumblr,
+  'xing': $xing,
+  'github': $github,
+  'stack-overflow': $stack-overflow,
+  'youtube': $youtube,
+  'dribbble': $dribbble,
+  'instagram': $instagram,
+  'pinterest': $pinterest,
+  'vk': $vk,
+  'yahoo': $yahoo,
+  'behance': $behance,
+  'reddit': $reddit,
+  'vimeo': $vimeo,
+  'dark-pink': $dark-pink,
+);
+
+// $all-colors: map-merge-multiple($theme-colors, $our-custom-theme-colors);
+
+$theme-colors: map-merge-multiple($theme-colors, $our-custom-theme-colors);
+$theme-colors-rgb: map-loop($theme-colors, to-rgb, '$value');
+$utilities-colors: map-merge($utilities-colors, $theme-colors-rgb);
+$utilities-text-colors: map-loop(
+  $utilities-colors,
+  rgba-css-var,
+  '$key',
+  'text'
+);
+$utilities-bg-colors: map-loop($utilities-colors, rgba-css-var, '$key', 'bg');
+
+$gray-base: #3c4b64 !default;
+$gray-100: #ebedef !default;
+$gray-200: #d8dbe0 !default;
+$gray-300: #c4c9d0 !default;
+$gray-400: #b1b7c1 !default;
+$gray-500: #9da5b1 !default;
+$gray-600: #8a93a2 !default;
+$gray-700: #768192 !default;
+$gray-800: #636f83 !default;
+$gray-900: #4f5d73 !default;
+
+$grays: () !default;
+$grays: map-merge(
+  (
+    '100': $gray-100,
+    '200': $gray-200,
+    '300': $gray-300,
+    '400': $gray-400,
+    '500': $gray-500,
+    '600': $gray-600,
+    '700': $gray-700,
+    '800': $gray-800,
+    '900': $gray-900,
+  ),
+  $grays
+);
+
+// /****************************
+//  Body Custom Colors
+// *****************************/
+$light: $gray-100 !default;
+$dark: $gray-800 !default;
+$theme-color-interval: 8% !default;
+$body-bg: $gray-100 !default;
+$body-color: $gray-base !default;
+$elevation-base-color: 60, 75, 100 !default; //#3c4b64
+$body-theme-map: () !default;
+$body-theme-map: map-merge(
+  (
+    default: (
+      'body-bg': $body-bg,
+      'body-color': $body-color,
+      'elevation-base-color': $elevation-base-color,
+    ),
+  ),
+  $body-theme-map
+);
+
+$body-bg: #edeef0 !default;
+$border-width: 1px !default;
+$border-color: $gray-200 !default;
+
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/utilities';
